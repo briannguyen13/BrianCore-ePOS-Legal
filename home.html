@@ -1,1 +1,223 @@
-Hello BrianCore ePOS
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BrianCore ePOS</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f5f7fa;
+    color:#07111f;
+}
+
+/* HEADER */
+.header{
+    background:#07111f;
+    padding:16px 40px;
+    display:flex;
+    align-items:center;
+}
+.header img{
+    height:60px;
+}
+
+/* HERO */
+.hero{
+    background:linear-gradient(135deg,#07111f,#0f2741);
+    color:white;
+    padding:120px 20px;
+    text-align:center;
+}
+.hero h1{
+    font-size:56px;
+    margin-bottom:20px;
+}
+.hero p{
+    font-size:22px;
+    max-width:900px;
+    margin:auto;
+    line-height:1.6;
+}
+
+/* SECTION */
+.section{
+    padding:80px 20px;
+    max-width:1100px;
+    margin:auto;
+}
+.section h2{
+    font-size:40px;
+    margin-bottom:20px;
+    text-align:center;
+}
+.section p{
+    font-size:20px;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+/* TWO-COLUMN LAYOUT */
+.row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:40px;
+    align-items:center;
+    justify-content:center;
+}
+.col{
+    flex:1;
+    min-width:300px;
+}
+
+/* FEATURE LIST */
+.feature-list{
+    font-size:20px;
+    line-height:1.8;
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+/* BUSINESS TYPES */
+.business-types{
+    font-size:22px;
+    line-height:1.8;
+    text-align:center;
+    margin-top:20px;
+}
+
+/* FOOTER */
+.footer{
+    background:#07111f;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+    font-size:16px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .hero h1{ font-size:42px; }
+    .section h2{ font-size:32px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <img src="images/logo/horizontal_logo_2.png">
+</div>
+
+<!-- HERO -->
+<div class="hero">
+    <h1>BrianCore ePOS</h1>
+    <p>Giải pháp quản lý bán hàng ổn định, linh hoạt và được thiết kế cho môi trường vận hành thực tế.</p>
+</div>
+
+<!-- ABOUT -->
+<div class="section">
+    <div class="row">
+        <div class="col">
+            <h2>Triết lý & Mục tiêu</h2>
+            <p>
+                Trong hoạt động kinh doanh nhà hàng, quán café hay cửa hàng bán lẻ, điều quan trọng nhất không phải là phần mềm có bao nhiêu tính năng.
+                Điều quan trọng là khi khách hàng cần thanh toán thì hệ thống vẫn phải hoạt động ổn định, nhanh chóng và đáng tin cậy.
+            </p>
+            <p>Đó là lý do BrianCore ePOS được xây dựng.</p>
+        </div>
+        <div class="col">
+            <img src="images/screenshots/02.Home.png" style="width:100%; border-radius:12px;">
+        </div>
+    </div>
+</div>
+
+<!-- OFFLINE FIRST -->
+<div class="section">
+    <div class="row">
+        <div class="col">
+            <img src="images/screenshots/offline_first.png" style="width:100%; border-radius:12px;">
+        </div>
+        <div class="col">
+            <h2>Offline‑First</h2>
+            <p>
+                Khác với nhiều hệ thống POS phụ thuộc hoàn toàn vào Internet và Cloud, BrianCore ePOS được thiết kế theo triết lý <strong>Offline‑First</strong>.
+            </p>
+            <p>
+                Toàn bộ quá trình bán hàng, xử lý đơn hàng và lưu trữ dữ liệu được vận hành trên hệ thống cục bộ.
+                Internet chỉ được sử dụng cho các chức năng như kiểm tra bản quyền hoặc một số tác vụ quản trị.
+            </p>
+            <p>
+                Điều này giúp giảm sự phụ thuộc vào kết nối Internet, đồng thời giúp doanh nghiệp chủ động hơn trong việc bảo vệ dữ liệu khách hàng và dữ liệu kinh doanh.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- FEATURES -->
+<div class="section">
+    <h2>Tính năng chính</h2>
+    <div class="feature-list">
+        ✅ Quản lý sản phẩm và nhóm sản phẩm<br>
+        ✅ Quản lý tùy chọn sản phẩm (size, topping, add-on...)<br>
+        ✅ Quản lý đơn hàng<br>
+        ✅ Quản lý voucher và khuyến mãi<br>
+        ✅ Đồng bộ dữ liệu giữa các thiết bị trong cùng mạng nội bộ<br>
+        ✅ Backup & Restore<br>
+        ✅ Báo cáo doanh thu<br>
+        ✅ Quản lý cấu hình và master data
+    </div>
+</div>
+
+<!-- BUSINESS TYPES -->
+<div class="section">
+    <h2>Phù hợp cho nhiều mô hình kinh doanh</h2>
+    <div class="business-types">
+        ☕ Quán café<br>
+        🍜 Nhà hàng / Khách sạn<br>
+        🛒 Cửa hàng bán lẻ<br>
+        🏪 Cửa hàng tiện lợi<br>
+        🎤 Karaoke<br>
+        🍱 Các mô hình có nhiều lựa chọn sản phẩm hoặc combo
+    </div>
+
+    <p style="text-align:center; font-size:20px; margin-top:30px;">
+        Phiên bản miễn phí vẫn cung cấp đầy đủ các chức năng cần thiết cho những quán ăn nhỏ, quán café nhỏ hoặc các cửa hàng kinh doanh gia đình.
+    </p>
+
+    <p style="text-align:center; font-size:20px;">
+        Mục tiêu của BrianCore ePOS không chỉ là một sản phẩm thương mại, mà còn là một giải pháp công nghệ dễ tiếp cận hơn cho cộng đồng kinh doanh nhỏ.
+    </p>
+</div>
+
+<!-- DEPLOYMENT -->
+<div class="section">
+    <h2>Triển khai thực tế</h2>
+    <p style="text-align:center; font-size:22px;">
+        📍 Hiện đang được triển khai tại VietThai Cuisine – Hastings, New Zealand
+    </p>
+</div>
+
+<!-- TECHNOLOGY -->
+<div class="section">
+    <h2>Công nghệ</h2>
+    <p style="text-align:center; font-size:22px;">
+        🚀 BrianCore ePOS<br>
+        Smart. Reliable. Offline‑First.<br><br>
+        Được xây dựng bằng Flutter cùng niềm đam mê tạo ra những sản phẩm phần mềm thực sự hữu ích cho người dùng.
+    </p>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    © 2026 BrianCore ePOS — Smart. Reliable. Offline‑First.
+</div>
+
+</body>
+</html>
