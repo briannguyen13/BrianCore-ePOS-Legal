@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hình ảnh ứng dụng – BrianCore ePOS</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Inter, Arial, sans-serif;
+    background:#f6f8fb;
+    color:#0a1a2b;
+}
+
+header{
+    background:#0a1a2b;
+    color:white;
+    padding:24px 40px;
+    font-size:28px;
+    font-weight:600;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));
+    gap:24px;
+}
+
+.gallery-item{
+    background:white;
+    padding:16px;
+    border-radius:12px;
+    box-shadow:0 4px 16px rgba(0,0,0,0.08);
+    text-align:center;
+}
+
+.gallery-item img{
+    width:100%;
+    border-radius:8px;
+    margin-bottom:10px;
+}
+</style>
+</head>
+
+<body>
+
+<header>Hình ảnh ứng dụng BrianCore ePOS</header>
+
+<div class="container">
+    <h2>Danh sách hình ảnh</h2>
+
+    <div class="gallery" id="gallery"></div>
+</div>
+
+<script>
+// Danh sách file trong thư mục
+const files = [
+    "01.Loading.png",
+    "02.Home.png",
+    "03.Menu.png",
+    "04.Order.png",
+    "05.OrderOption.png",
+    "06.ViewAllOrder.png",
+    "07.Payment.png",
+    "08.SetupProduct.png",
+    "09.About.png",
+    "10.Reserved.png",
+    "13.NetworkConfig.png"
+];
+
+const gallery = document.getElementById("gallery");
+
+files.forEach(file => {
+    const item = document.createElement("div");
+    item.className = "gallery-item";
+
+    item.innerHTML = `
+        <img src="images/screenshots/${file}" alt="${file}">
+        <span>${file.replace(".png","")}</span>
+    `;
+
+    gallery.appendChild(item);
+});
+</script>
+
+</body>
+</html>

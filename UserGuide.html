@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hướng dẫn sử dụng – BrianCore ePOS</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Inter, Arial, sans-serif;
+    background:#f6f8fb;
+    color:#0a1a2b;
+    line-height:1.7;
+}
+
+header{
+    background:#0a1a2b;
+    color:white;
+    padding:24px 40px;
+    font-size:28px;
+    font-weight:600;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+h2{
+    font-size:32px;
+    margin-top:40px;
+    margin-bottom:16px;
+    color:#0a1a2b;
+}
+
+h3{
+    font-size:24px;
+    margin-top:28px;
+    margin-bottom:12px;
+}
+
+.section{
+    background:white;
+    padding:28px;
+    border-radius:12px;
+    box-shadow:0 4px 16px rgba(0,0,0,0.06);
+    margin-bottom:40px;
+}
+
+ul{
+    margin-top:10px;
+    padding-left:20px;
+}
+
+footer{
+    background:#0a1a2b;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:60px;
+}
+</style>
+</head>
+
+<body>
+
+<header>Hướng dẫn sử dụng BrianCore ePOS</header>
+
+<div class="container">
+
+    <div class="section">
+        <h2>Giới thiệu</h2>
+        <p>BrianCore ePOS được xây dựng theo mô hình <strong>Offline‑First</strong>, toàn bộ dữ liệu bán hàng được lưu trữ và xử lý trên thiết bị hoặc hệ thống nội bộ. Internet chỉ dùng cho kiểm tra bản quyền và một số tác vụ quản trị.</p>
+        <p>Nhờ đó, hoạt động bán hàng vẫn diễn ra bình thường ngay cả khi kết nối Internet không ổn định hoặc gián đoạn.</p>
+
+        <h3>Phù hợp cho các mô hình:</h3>
+        <ul>
+            <li>Cửa hàng bán lẻ, tiệm tạp hoá</li>
+            <li>Nhà hàng, quán café, quán ăn</li>
+            <li>Karaoke, tiệm Internet, tiệm game</li>
+            <li>Các mô hình có đặt bàn, giữ chỗ, thanh toán theo đơn</li>
+        </ul>
+
+        <h3>Mục tiêu & ưu điểm:</h3>
+        <ul>
+            <li>Bán hàng nhanh và trực quan</li>
+            <li>Lưu trữ dữ liệu cục bộ</li>
+            <li>Đồng bộ khi có mạng nội bộ</li>
+            <li>Hỗ trợ cấu hình mạng, máy in</li>
+            <li>Dễ mở rộng theo module</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Các phiên bản sản phẩm</h2>
+
+        <h3>BrianCore ePOS Free</h3>
+        <ul>
+            <li>Phù hợp cho quán ăn nhỏ, café nhỏ, cửa hàng gia đình</li>
+            <li>Quản lý khu vực bán hàng (hạn chế)</li>
+            <li>Quản lý sản phẩm (hạn chế)</li>
+            <li>Quản lý đơn hàng</li>
+            <li>Thanh toán</li>
+            <li>Báo cáo cơ bản</li>
+        </ul>
+
+        <h3>BrianCore ePOS Pro</h3>
+        <ul>
+            <li>Đầy đủ tính năng của bản Free</li>
+            <li>Quản lý đặt chỗ (Reserved)</li>
+            <li>Voucher (QR Code)</li>
+            <li>Đồng bộ nhiều thiết bị</li>
+            <li>Backup & Restore</li>
+            <li>Các chức năng nâng cao khác</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Yêu cầu môi trường sử dụng</h2>
+
+        <h3>Thiết bị</h3>
+        <ul>
+            <li>Android / iOS</li>
+            <li>Máy in nhiệt có IP nếu cần in hóa đơn</li>
+            <li>Mạng LAN nội bộ nếu dùng nhiều thiết bị</li>
+        </ul>
+
+        <h3>Cài đặt</h3>
+        <ul>
+            <li>Cài ứng dụng BrianCore ePOS</li>
+            <li>Thiết lập mạng nội bộ nếu cần đồng bộ</li>
+            <li>Cấu hình máy in phù hợp</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Giao diện tổng quan</h2>
+        <ul>
+            <li>Trang chủ</li>
+            <li>Khu vực bán hàng (Resource Group)</li>
+            <li>Vị trí phục vụ (Resource)</li>
+            <li>Màn hình đặt hàng (Order)</li>
+            <li>Màn hình thanh toán (Payment)</li>
+            <li>Reserved</li>
+            <li>Voucher</li>
+            <li>Báo cáo thanh toán</li>
+            <li>Cấu hình ứng dụng, mạng, máy in</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Cấu hình ban đầu</h2>
+
+        <h3>Thiết lập mạng (PRO)</h3>
+        <ul>
+            <li>Nhập Server IP</li>
+            <li>Port mặc định</li>
+            <li>Auto Pull Interval</li>
+            <li>Kiểm tra kết nối</li>
+            <li>Restart HTTP service</li>
+        </ul>
+
+        <h3>Thiết lập máy in</h3>
+        <ul>
+            <li>Thêm máy in</li>
+            <li>Cấu hình mở khay tiền</li>
+            <li>Chọn máy in mặc định</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Quản lý dữ liệu gốc (Master Data)</h2>
+
+        <h3>Resource Group / Resource</h3>
+        <p>Dùng để quản lý khu vực và vị trí phục vụ.</p>
+
+        <h3>Product Group / Product</h3>
+        <p>Quản lý danh mục sản phẩm, nhóm sản phẩm.</p>
+
+        <h3>Option Group / Option Value</h3>
+        <p>Tạo tùy chọn sản phẩm như size, topping, đá, gia vị.</p>
+
+        <h3>Product Option Mapping</h3>
+        <p>Gắn sản phẩm với các tùy chọn tương ứng.</p>
+    </div>
+
+    <div class="section">
+        <h2>Quy trình tạo & xử lý đơn hàng</h2>
+
+        <h3>Mở resource</h3>
+        <p>Chọn bàn / vị trí để bắt đầu đơn hàng.</p>
+
+        <h3>Tạo đơn hàng</h3>
+        <ul>
+            <li>Chọn nhóm sản phẩm</li>
+            <li>Chọn sản phẩm</li>
+            <li>Chọn tùy chọn</li>
+            <li>Thêm số lượng</li>
+            <li>Ghi chú đơn hàng</li>
+        </ul>
+
+        <h3>Cập nhật & lưu đơn hàng</h3>
+        <p>Hệ thống lưu dữ liệu cục bộ và tạo event đồng bộ.</p>
+
+        <h3>In hóa đơn / gửi món</h3>
+        <p>Hỗ trợ in bill, in order, in phiếu thu.</p>
+    </div>
+
+    <div class="section">
+        <h2>Thanh toán & Split Bill</h2>
+        <ul>
+            <li>Xem đơn hàng</li>
+            <li>Tính tổng tiền</li>
+            <li>Áp dụng voucher</li>
+            <li>Chia hóa đơn</li>
+            <li>Hoàn tất thanh toán</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Reserved (PRO)</h2>
+        <p>Quản lý đặt chỗ, giữ bàn, hiển thị trạng thái resource.</p>
+    </div>
+
+    <div class="section">
+        <h2>Voucher (PRO)</h2>
+        <ul>
+            <li>Quản lý voucher</li>
+            <li>Quét QR</li>
+            <li>Áp dụng giảm giá</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Backup & Restore</h2>
+        <ul>
+            <li>Backup Database</li>
+            <li>Restore từ file backup</li>
+            <li>Khuyến nghị backup hằng ngày</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Đồng bộ dữ liệu (PRO)</h2>
+        <p>Hệ thống lưu local trước, đồng bộ sau khi có mạng nội bộ.</p>
+    </div>
+
+    <div class="section">
+        <h2>Quy trình vận hành hằng ngày</h2>
+        <h3>Trước giờ mở cửa</h3>
+        <ul>
+            <li>Mở ứng dụng</li>
+            <li>Kiểm tra mạng</li>
+            <li>Kiểm tra máy in</li>
+        </ul>
+
+        <h3>Bán hàng</h3>
+        <ul>
+            <li>Chọn resource</li>
+            <li>Tạo đơn hàng</li>
+        </ul>
+
+        <h3>Thanh toán</h3>
+        <ul>
+            <li>Kiểm tra đơn</li>
+            <li>Áp dụng voucher</li>
+            <li>Chốt thanh toán</li>
+        </ul>
+
+        <h3>Cuối ngày</h3>
+        <ul>
+            <li>Xem báo cáo</li>
+            <li>Backup dữ liệu</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Mẹo vận hành</h2>
+        <ul>
+            <li>Không thay đổi mã dữ liệu đã phát sinh</li>
+            <li>Định nghĩa Resource/Product trước khi bán</li>
+            <li>Kiểm tra máy in trước giờ mở quầy</li>
+            <li>Ưu tiên offline khi mạng yếu</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Khắc phục sự cố</h2>
+        <h3>Không in được hóa đơn</h3>
+        <ul>
+            <li>Kiểm tra máy in</li>
+            <li>Kiểm tra cấu hình printer</li>
+            <li>Kiểm tra lệnh mở khay tiền</li>
+        </ul>
+
+        <h3>Đơn hàng không cập nhật</h3>
+        <ul>
+            <li>Kiểm tra resource</li>
+            <li>Kiểm tra trạng thái đơn</li>
+            <li>Refresh hoặc restart ứng dụng</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Liên hệ hỗ trợ</h2>
+        <p>Email hỗ trợ kỹ thuật: <strong>briancore.pos@gmail.com</strong></p>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 BrianCore ePOS — User Guide v1.0
+</footer>
+
+</body>
+</html>
