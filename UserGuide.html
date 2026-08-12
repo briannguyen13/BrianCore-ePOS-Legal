@@ -384,24 +384,26 @@ footer{
 
         <!-- Danh sách chọn bài học tương tác -->
         <div class="playlist-menu">
-            <h3>Danh sách bài học (Bấm để phát video):</h3>
+            <h3>Danh sách hướng dẫn(Bấm để phát video):</h3>
             <div class="playlist-grid">
-                <button class="playlist-item" onclick="playLesson(1)">▶ Bài 1: Quản lý khu vực bán hàng</button>
-                <button class="playlist-item" onclick="playLesson(2)">▶ Bài 2: Quản lý vị trí phục vụ</button>
-                <button class="playlist-item" onclick="playLesson(3)">▶ Bài 3: Quản lý nhóm sản phẩm</button>
-                <button class="playlist-item" onclick="playLesson(4)">▶ Bài 4: Quản lý danh mục sản phẩm</button>
-                <button class="playlist-item" onclick="playLesson(5)">▶ Bài 5: Quản lý nhóm tùy chọn</button>
-                <button class="playlist-item" onclick="playLesson(6)">▶ Bài 6: Quản lý tùy chọn sản phẩm</button>
-                <button class="playlist-item" onclick="playLesson(7)">▶ Bài 7: Áp dụng tùy chọn sản phẩm</button>
-                <button class="playlist-item" onclick="playLesson(8)">▶ Bài 8: Quy trình tạo đơn hàng</button>
-                <button class="playlist-item" onclick="playLesson(9)">▶ Bài 9: Cấu hình máy in & hóa đơn</button>
-                <button class="playlist-item" onclick="playLesson(10)">▶ Bài 10: Quy trình thanh toán & Split Bill</button>
-                <button class="playlist-item" onclick="playLesson(11)">▶ Bài 11: Quản lý đặt chỗ (Reserved)</button>
-                <button class="playlist-item" onclick="playLesson(12)">▶ Bài 12: Quản lý Voucher & Quét QR</button>
-                <button class="playlist-item" onclick="playLesson(13)">▶ Bài 13: Cấu hình mạng LAN (Server IP)</button>
-                <button class="playlist-item" onclick="playLesson(14)">▶ Bài 14: Đồng bộ dữ liệu nhiều thiết bị</button>
-                <button class="playlist-item" onclick="playLesson(15)">▶ Bài 15: Sao lưu & Phục hồi dữ liệu</button>
-                <button class="playlist-item" onclick="playLesson(16)">▶ Bài 16: Báo cáo & Tổng kết cuối ngày</button>
+                <button class="playlist-item" onclick="playLesson('PLdRi9y4GXAV8')">▶ Phát toàn bộ Playlist</button>
+                <!-- Lưu ý: Bạn thay các ID dưới đây bằng Video ID tương ứng (nằm sau v= trong URL từng video) nếu muốn bấm mở đúng video lẻ -->
+                <button class="playlist-item" onclick="playLesson('kAny5acxzts')">▶ Bài 1: Quản lý khu vực bán hàng</button>
+                <button class="playlist-item" onclick="playLesson('YB0j8frmijY')">▶ Bài 2: Quản lý vị trí phục vụ</button>
+                <button class="playlist-item" onclick="playLesson('WyNGO2YXIAA')">▶ Bài 3: Quản lý nhóm sản phẩm</button>
+                <button class="playlist-item" onclick="playLesson('qydNWooHV48')">▶ Bài 4: Quản lý danh mục sản phẩm</button>
+                <button class="playlist-item" onclick="playLesson('o7hyvYh0xA8')">▶ Bài 5: Quản lý nhóm tùy chọn</button>
+                <button class="playlist-item" onclick="playLesson('swOlXwSeqcQ')">▶ Bài 6: Quản lý danh mục các tùy chọn sản phẩm</button>
+                <button class="playlist-item" onclick="playLesson('vjmsWMbg0SM')">▶ Bài 7: Ánh xạ sản phẩm với các tùy chọn</button>
+                <button class="playlist-item" onclick="playLesson('zeE7TcioO3E')">▶ Bài 8: Quản lý đơn hàng</button>
+                <button class="playlist-item" onclick="playLesson('0Bh1goX7fyQ')">▶ Bài 9: Tính tiền</button>
+                <button class="playlist-item" onclick="playLesson('6YWDGJdgd3s')">▶ Bài 10: Tính tiền có chia Bill</button>
+                <button class="playlist-item" onclick="playLesson('ZqAsGsmeQ3s')">▶ Bài 11: Tính tiền có Voucher</button>
+                <button class="playlist-item" onclick="playLesson('hbiRmy5dj98')">▶ Bài 12: Quản lý Voucher</button>
+                <button class="playlist-item" onclick="playLesson('j1n7eTX67lQ')">▶ Bài 13: Quản lý đặt chỗ</button>
+                <button class="playlist-item" onclick="playLesson('a9U91MPY57k')">▶ Bài 14: Cấu hình máy in</button>
+                <button class="playlist-item" onclick="playLesson('KakMC4hRgHI')">▶ Bài 15: Cấu hình chung</button>
+                <button class="playlist-item" onclick="playLesson('uzHzmPpwHzk')">▶ Bài 16: Cấu hình mạng và đồng bộ dữ liệu</button>
             </div>
         </div>
 
@@ -422,13 +424,15 @@ footer{
     © 2026 BrianCore ePOS — User Guide v1.0
 </footer>
 
-<!-- Script xử lý phát đúng bài khi bấm vào danh sách -->
 <script>
-function playLesson(index) {
+function playLesson(id) {
     var iframe = document.getElementById('main-player');
-    iframe.src = "https://www.youtube.com/embed/videoseries?list=PLdRi9y4GXAV8&index=" + index + "&autoplay=1";
-    
-    // Tự động cuộn mượt lên khung video để xem
+    if (id.startsWith('PL')) {
+        iframe.src = "https://www.youtube.com/embed/videoseries?list=" + id + "&autoplay=1";
+    } else {
+        // Thêm &list=PLdRi9y4GXAV8 để khi hết video bài lẻ, YouTube vẫn tự phát tiếp các bài trong Playlist
+        iframe.src = "https://www.youtube.com/embed/" + id + "?list=PLdRi9y4GXAV8&autoplay=1";
+    }
     iframe.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 </script>
