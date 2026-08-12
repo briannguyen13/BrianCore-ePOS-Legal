@@ -1,0 +1,19 @@
+# macOS junk files
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+
+# Editor & IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary files & Logs
+*.log
+*.tmp
+.cache/
