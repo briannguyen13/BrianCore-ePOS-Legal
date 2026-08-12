@@ -83,6 +83,48 @@ footer{
     border: 0;
 }
 
+/* Styling cho danh sách chọn bài học */
+.playlist-menu {
+    margin-top: 20px;
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.playlist-menu h3 {
+    margin-top: 0;
+    font-size: 18px;
+    color: #0a1a2b;
+}
+
+.playlist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.playlist-item {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: white;
+    padding: 10px 14px;
+    border-radius: 6px;
+    color: #0a1a2b;
+    font-size: 14px;
+    border: 1px solid #cbd5e1;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.playlist-item:hover {
+    background: #0a1a2b;
+    color: white;
+    border-color: #0a1a2b;
+}
 </style>
 </head>
 
@@ -332,16 +374,40 @@ footer{
         <!-- Khung nhúng Playlist YouTube -->
         <div class="video-container">
             <iframe 
+                id="main-player"
                 src="https://www.youtube.com/embed/videoseries?list=PLdRi9y4GXAV8" 
                 title="BrianCore ePOS Tutorial Playlist" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen>
             </iframe>
         </div>
-        
+
+        <!-- Danh sách chọn bài học tương tác -->
+        <div class="playlist-menu">
+            <h3>Danh sách bài học (Bấm để phát video):</h3>
+            <div class="playlist-grid">
+                <button class="playlist-item" onclick="playLesson(1)">▶ Bài 1: Quản lý khu vực bán hàng</button>
+                <button class="playlist-item" onclick="playLesson(2)">▶ Bài 2: Quản lý vị trí phục vụ</button>
+                <button class="playlist-item" onclick="playLesson(3)">▶ Bài 3: Quản lý nhóm sản phẩm</button>
+                <button class="playlist-item" onclick="playLesson(4)">▶ Bài 4: Quản lý danh mục sản phẩm</button>
+                <button class="playlist-item" onclick="playLesson(5)">▶ Bài 5: Quản lý nhóm tùy chọn</button>
+                <button class="playlist-item" onclick="playLesson(6)">▶ Bài 6: Quản lý tùy chọn sản phẩm</button>
+                <button class="playlist-item" onclick="playLesson(7)">▶ Bài 7: Áp dụng tùy chọn sản phẩm</button>
+                <button class="playlist-item" onclick="playLesson(8)">▶ Bài 8: Quy trình tạo đơn hàng</button>
+                <button class="playlist-item" onclick="playLesson(9)">▶ Bài 9: Cấu hình máy in & hóa đơn</button>
+                <button class="playlist-item" onclick="playLesson(10)">▶ Bài 10: Quy trình thanh toán & Split Bill</button>
+                <button class="playlist-item" onclick="playLesson(11)">▶ Bài 11: Quản lý đặt chỗ (Reserved)</button>
+                <button class="playlist-item" onclick="playLesson(12)">▶ Bài 12: Quản lý Voucher & Quét QR</button>
+                <button class="playlist-item" onclick="playLesson(13)">▶ Bài 13: Cấu hình mạng LAN (Server IP)</button>
+                <button class="playlist-item" onclick="playLesson(14)">▶ Bài 14: Đồng bộ dữ liệu nhiều thiết bị</button>
+                <button class="playlist-item" onclick="playLesson(15)">▶ Bài 15: Sao lưu & Phục hồi dữ liệu</button>
+                <button class="playlist-item" onclick="playLesson(16)">▶ Bài 16: Báo cáo & Tổng kết cuối ngày</button>
+            </div>
+        </div>
+
         <!-- Ghi chú & Link mở Playlist trực tiếp trên YouTube -->
-        <p style="font-size: 14px; color: #555; margin-top: 10px;">
-            💡 <em>Mẹo: Bấm vào biểu tượng <strong>danh sách (≡)</strong> ở góc trên bên phải khung video để xem toàn bộ 16 bài hướng dẫn, hoặc <a href="https://youtube.com/playlist?list=PLdRi9y4GXAV8" target="_blank" style="color: #0a1a2b; font-weight: bold;">Mở Playlist trên YouTube ↗</a>.</em>
+        <p style="font-size: 14px; color: #555; margin-top: 15px;">
+            💡 <em>Mẹo: Bạn có thể chọn bài muốn xem ở danh sách trên, hoặc bấm <a href="https://youtube.com/playlist?list=PLdRi9y4GXAV8" target="_blank" style="color: #0a1a2b; font-weight: bold;">Mở trọn bộ Playlist trên YouTube ↗</a>.</em>
         </p>
     </div>
 
@@ -355,6 +421,17 @@ footer{
 <footer>
     © 2026 BrianCore ePOS — User Guide v1.0
 </footer>
+
+<!-- Script xử lý phát đúng bài khi bấm vào danh sách -->
+<script>
+function playLesson(index) {
+    var iframe = document.getElementById('main-player');
+    iframe.src = "https://www.youtube.com/embed/videoseries?list=PLdRi9y4GXAV8&index=" + index + "&autoplay=1";
+    
+    // Tự động cuộn mượt lên khung video để xem
+    iframe.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+</script>
 
 </body>
 </html>
