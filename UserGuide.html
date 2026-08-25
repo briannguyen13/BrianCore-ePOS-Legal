@@ -1,441 +1,433 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hướng dẫn sử dụng – BrianCore ePOS</title>
-
-<style>
-body{
-    margin:0;
-    font-family:Inter, Arial, sans-serif;
-    background:#f6f8fb;
-    color:#0a1a2b;
-    line-height:1.7;
-}
-
-header{
-    background:#0a1a2b;
-    color:white;
-    padding:24px 40px;
-    font-size:28px;
-    font-weight:600;
-}
-
-.container{
-    max-width:1100px;
-    margin:auto;
-    padding:40px 20px;
-}
-
-h2{
-    font-size:32px;
-    margin-top:40px;
-    margin-bottom:16px;
-    color:#0a1a2b;
-}
-
-h3{
-    font-size:24px;
-    margin-top:28px;
-    margin-bottom:12px;
-}
-
-.section{
-    background:white;
-    padding:28px;
-    border-radius:12px;
-    box-shadow:0 4px 16px rgba(0,0,0,0.06);
-    margin-bottom:40px;
-}
-
-ul{
-    margin-top:10px;
-    padding-left:20px;
-}
-
-footer{
-    background:#0a1a2b;
-    color:white;
-    text-align:center;
-    padding:20px;
-    margin-top:60px;
-}
-
-/* Khung chứa video tràn 100% chiều rộng và chuẩn tỉ lệ 16:9 */
-.video-container {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%; /* Tỉ lệ 16:9 */
-    height: 0;
-    overflow: hidden;
-    border-radius: 8px;
-    margin-top: 16px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-}
-
-/* Styling cho danh sách chọn bài học */
-.playlist-menu {
-    margin-top: 20px;
-    background: #f8fafc;
-    padding: 20px;
-    border-radius: 8px;
-    border: 1px solid #e2e8f0;
-}
-
-.playlist-menu h3 {
-    margin-top: 0;
-    font-size: 18px;
-    color: #0a1a2b;
-}
-
-.playlist-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 10px;
-    margin-top: 12px;
-}
-
-.playlist-item {
-    display: block;
-    width: 100%;
-    text-align: left;
-    background: white;
-    padding: 10px 14px;
-    border-radius: 6px;
-    color: #0a1a2b;
-    font-size: 14px;
-    border: 1px solid #cbd5e1;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    font-family: inherit;
-}
-
-.playlist-item:hover {
-    background: #0a1a2b;
-    color: white;
-    border-color: #0a1a2b;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Guide / Hướng dẫn sử dụng — BrianCore ePOS</title>
+    <meta name="description" content="Hướng dẫn sử dụng chi tiết hệ thống quản lý bán hàng BrianCore ePOS. Comprehensive user guide and tutorials.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ambient: {
+                            dark: '#0B0F19',
+                            card: '#131C2E',
+                            accent: '#10B981',
+                            emerald: '#34D399'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
-<body>
+<body class="bg-ambient-dark text-slate-100 font-sans antialiased selection:bg-emerald-500 selection:text-white">
 
-<header>Hướng dẫn sử dụng BrianCore ePOS</header>
-
-<div class="container">
-
-    <div class="section">
-        <h2>Giới thiệu</h2>
-        <p>BrianCore ePOS được xây dựng theo mô hình <strong>Offline‑First</strong>, toàn bộ dữ liệu bán hàng được lưu trữ và xử lý trên thiết bị hoặc hệ thống nội bộ. Internet chỉ dùng cho kiểm tra bản quyền và một số tác vụ quản trị.</p>
-        <p>Nhờ đó, hoạt động bán hàng vẫn diễn ra bình thường ngay cả khi kết nối Internet không ổn định hoặc gián đoạn.</p>
-
-        <h3>Phù hợp cho các mô hình:</h3>
-        <ul>
-            <li>Cửa hàng bán lẻ, tiệm tạp hoá</li>
-            <li>Nhà hàng, quán café, quán ăn</li>
-            <li>Karaoke, tiệm Internet, tiệm game</li>
-            <li>Các mô hình có đặt bàn, giữ chỗ, thanh toán theo đơn</li>
-        </ul>
-
-        <h3>Mục tiêu & ưu điểm:</h3>
-        <ul>
-            <li>Bán hàng nhanh và trực quan</li>
-            <li>Lưu trữ dữ liệu cục bộ</li>
-            <li>Đồng bộ khi có mạng nội bộ</li>
-            <li>Hỗ trợ cấu hình mạng, máy in</li>
-            <li>Dễ mở rộng theo module</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>Các phiên bản sản phẩm</h2>
-
-        <h3>BrianCore ePOS Free</h3>
-        <ul>
-            <li>Phù hợp cho quán ăn nhỏ, café nhỏ, cửa hàng gia đình</li>
-            <li>Quản lý khu vực bán hàng (hạn chế)</li>
-            <li>Quản lý sản phẩm (hạn chế)</li>
-            <li>Quản lý đơn hàng</li>
-            <li>Thanh toán</li>
-            <li>Báo cáo cơ bản</li>
-        </ul>
-
-        <h3>BrianCore ePOS Pro</h3>
-        <ul>
-            <li>Đầy đủ tính năng của bản Free</li>
-            <li>Quản lý đặt chỗ (Reserved)</li>
-            <li>Voucher (QR Code)</li>
-            <li>Đồng bộ nhiều thiết bị</li>
-            <li>Backup & Restore</li>
-            <li>Các chức năng nâng cao khác</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>Yêu cầu môi trường sử dụng</h2>
-
-        <h3>Thiết bị</h3>
-        <ul>
-            <li>Android / iOS</li>
-            <li>Máy in nhiệt có IP nếu cần in hóa đơn</li>
-            <li>Mạng LAN nội bộ nếu dùng nhiều thiết bị</li>
-        </ul>
-
-        <h3>Cài đặt</h3>
-        <ul>
-            <li>Cài ứng dụng BrianCore ePOS</li>
-            <li>Thiết lập mạng nội bộ nếu cần đồng bộ</li>
-            <li>Cấu hình máy in phù hợp</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>Giao diện tổng quan</h2>
-        <ul>
-            <li>Trang chủ</li>
-            <li>Khu vực bán hàng (Resource Group)</li>
-            <li>Vị trí phục vụ (Resource)</li>
-            <li>Màn hình đặt hàng (Order)</li>
-            <li>Màn hình thanh toán (Payment)</li>
-            <li>Reserved</li>
-            <li>Voucher</li>
-            <li>Báo cáo thanh toán</li>
-            <li>Cấu hình ứng dụng, mạng, máy in</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>Cấu hình ban đầu</h2>
-
-        <h3>Thiết lập mạng (PRO)</h3>
-        <ul>
-            <li>Nhập Server IP</li>
-            <li>Port mặc định</li>
-            <li>Auto Pull Interval</li>
-            <li>Kiểm tra kết nối</li>
-            <li>Restart HTTP service</li>
-        </ul>
-
-        <h3>Thiết lập máy in</h3>
-        <ul>
-            <li>Thêm máy in</li>
-            <li>Cấu hình mở khay tiền</li>
-            <li>Chọn máy in mặc định</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>Quản lý dữ liệu gốc (Master Data)</h2>
-
-        <h3>Resource Group / Resource</h3>
-        <p>Dùng để quản lý khu vực và vị trí phục vụ.</p>
-
-        <h3>Product Group / Product</h3>
-        <p>Quản lý danh mục sản phẩm, nhóm sản phẩm.</p>
-
-        <h3>Option Group / Option Value</h3>
-        <p>Tạo tùy chọn sản phẩm như size, topping, đá, gia vị.</p>
-
-        <h3>Product Option Mapping</h3>
-        <p>Gắn sản phẩm với các tùy chọn tương ứng.</p>
-    </div>
-
-    <div class="section">
-        <h2>Quy trình tạo & xử lý đơn hàng</h2>
-
-        <h3>Mở resource</h3>
-        <p>Chọn bàn / vị trí để bắt đầu đơn hàng.</p>
-
-        <h3>Tạo đơn hàng</h3>
-        <ul>
-            <li>Chọn nhóm sản phẩm</li>
-            <li>Chọn sản phẩm</li>
-            <li>Chọn tùy chọn</li>
-            <li>Thêm số lượng</li>
-            <li>Ghi chú đơn hàng</li>
-        </ul>
-
-        <h3>Cập nhật & lưu đơn hàng</h3>
-        <p>Hệ thống lưu dữ liệu cục bộ và tạo event đồng bộ.</p>
-
-        <h3>In hóa đơn / gửi món</h3>
-        <p>Hỗ trợ in bill, in order, in phiếu thu.</p>
-    </div>
-
-    <div class="section">
-        <h2>Thanh toán & Split Bill</h2>
-        <ul>
-            <li>Xem đơn hàng</li>
-            <li>Tính tổng tiền</li>
-            <li>Áp dụng voucher</li>
-            <li>Chia hóa đơn</li>
-            <li>Hoàn tất thanh toán</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>Reserved (PRO)</h2>
-        <p>Quản lý đặt chỗ, giữ bàn, hiển thị trạng thái resource.</p>
-    </div>
-
-    <div class="section">
-        <h2>Voucher (PRO)</h2>
-        <ul>
-            <li>Quản lý voucher</li>
-            <li>Quét QR</li>
-            <li>Áp dụng giảm giá</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>Backup & Restore</h2>
-        <ul>
-            <li>Backup Database</li>
-            <li>Restore từ file backup</li>
-            <li>Khuyến nghị backup hằng ngày</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>Đồng bộ dữ liệu (PRO)</h2>
-        <p>Hệ thống lưu local trước, đồng bộ sau khi có mạng nội bộ.</p>
-    </div>
-
-    <div class="section">
-        <h2>Quy trình vận hành hằng ngày</h2>
-        <h3>Trước giờ mở cửa</h3>
-        <ul>
-            <li>Mở ứng dụng</li>
-            <li>Kiểm tra mạng</li>
-            <li>Kiểm tra máy in</li>
-        </ul>
-
-        <h3>Bán hàng</h3>
-        <ul>
-            <li>Chọn resource</li>
-            <li>Tạo đơn hàng</li>
-        </ul>
-
-        <h3>Thanh toán</h3>
-        <ul>
-            <li>Kiểm tra đơn</li>
-            <li>Áp dụng voucher</li>
-            <li>Chốt thanh toán</li>
-        </ul>
-
-        <h3>Cuối ngày</h3>
-        <ul>
-            <li>Xem báo cáo</li>
-            <li>Backup dữ liệu</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>Mẹo vận hành</h2>
-        <ul>
-            <li>Không thay đổi mã dữ liệu đã phát sinh</li>
-            <li>Định nghĩa Resource/Product trước khi bán</li>
-            <li>Kiểm tra máy in trước giờ mở quầy</li>
-            <li>Ưu tiên offline khi mạng yếu</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>Khắc phục sự cố</h2>
-        <h3>Không in được hóa đơn</h3>
-        <ul>
-            <li>Kiểm tra máy in</li>
-            <li>Kiểm tra cấu hình printer</li>
-            <li>Kiểm tra lệnh mở khay tiền</li>
-        </ul>
-
-        <h3>Đơn hàng không cập nhật</h3>
-        <ul>
-            <li>Kiểm tra resource</li>
-            <li>Kiểm tra trạng thái đơn</li>
-            <li>Refresh hoặc restart ứng dụng</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>Video hướng dẫn</h2>
-        <p>Xem trọn bộ các video hướng dẫn chi tiết về cách thiết lập và vận hành phần mềm BrianCore ePOS:</p>
-        
-        <!-- Khung nhúng Playlist YouTube -->
-        <div class="video-container">
-            <iframe 
-                id="main-player"
-                src="https://www.youtube.com/embed/videoseries?list=PLdRi9y4GXAV8" 
-                title="BrianCore ePOS Tutorial Playlist" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-            </iframe>
-        </div>
-
-        <!-- Danh sách chọn bài học tương tác -->
-        <div class="playlist-menu">
-            <h3>Danh sách hướng dẫn(Bấm để phát video):</h3>
-            <div class="playlist-grid">
-                <button class="playlist-item" onclick="playLesson('PLdRi9y4GXAV8')">▶ Phát toàn bộ Playlist</button>
-                <!-- Lưu ý: Bạn thay các ID dưới đây bằng Video ID tương ứng (nằm sau v= trong URL từng video) nếu muốn bấm mở đúng video lẻ -->
-                <button class="playlist-item" onclick="playLesson('kAny5acxzts')">▶ Bài 1: Quản lý khu vực bán hàng</button>
-                <button class="playlist-item" onclick="playLesson('YB0j8frmijY')">▶ Bài 2: Quản lý vị trí phục vụ</button>
-                <button class="playlist-item" onclick="playLesson('WyNGO2YXIAA')">▶ Bài 3: Quản lý nhóm sản phẩm</button>
-                <button class="playlist-item" onclick="playLesson('qydNWooHV48')">▶ Bài 4: Quản lý danh mục sản phẩm</button>
-                <button class="playlist-item" onclick="playLesson('o7hyvYh0xA8')">▶ Bài 5: Quản lý nhóm tùy chọn</button>
-                <button class="playlist-item" onclick="playLesson('swOlXwSeqcQ')">▶ Bài 6: Quản lý danh mục các tùy chọn sản phẩm</button>
-                <button class="playlist-item" onclick="playLesson('vjmsWMbg0SM')">▶ Bài 7: Ánh xạ sản phẩm với các tùy chọn</button>
-                <button class="playlist-item" onclick="playLesson('zeE7TcioO3E')">▶ Bài 8: Quản lý đơn hàng</button>
-                <button class="playlist-item" onclick="playLesson('0Bh1goX7fyQ')">▶ Bài 9: Tính tiền</button>
-                <button class="playlist-item" onclick="playLesson('6YWDGJdgd3s')">▶ Bài 10: Tính tiền có chia Bill</button>
-                <button class="playlist-item" onclick="playLesson('ZqAsGsmeQ3s')">▶ Bài 11: Tính tiền có Voucher</button>
-                <button class="playlist-item" onclick="playLesson('hbiRmy5dj98')">▶ Bài 12: Quản lý Voucher</button>
-                <button class="playlist-item" onclick="playLesson('j1n7eTX67lQ')">▶ Bài 13: Quản lý đặt chỗ</button>
-                <button class="playlist-item" onclick="playLesson('a9U91MPY57k')">▶ Bài 14: Cấu hình máy in</button>
-                <button class="playlist-item" onclick="playLesson('KakMC4hRgHI')">▶ Bài 15: Cấu hình chung</button>
-                <button class="playlist-item" onclick="playLesson('uzHzmPpwHzk')">▶ Bài 16: Cấu hình mạng và đồng bộ dữ liệu</button>
+    <!-- HEADER / THANH ĐIỀU HƯỚNG -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-ambient-dark/85 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <a href="index.html" class="flex items-center space-x-3 group">
+                    <img src="images/logo/brian_core_symbol_V.2.f.png" alt="BrianCore ePOS Logo" class="h-10 object-contain shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform">
+                </a>
+            </div>
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
+                <a href="index.html" class="hover:text-emerald-400 transition-colors">Home <span class="text-xs text-slate-500">/ Trang chủ</span></a>
+                <a href="UserGuide.html" class="text-emerald-400 font-semibold">User Guide <span class="text-xs text-slate-500">/ Hướng dẫn</span></a>
+                <a href="privacy-policy.html" class="hover:text-emerald-400 transition-colors">Privacy <span class="text-xs text-slate-500">/ Quyền riêng tư</span></a>
+                <a href="ScreenShorts.html" class="hover:text-emerald-400 transition-colors">Gallery <span class="text-xs text-slate-500">/ Hình ảnh</span></a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <a href="https://play.google.com/store/apps/details?id=com.briancore.briancorepos&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold text-sm transition-all shadow-lg shadow-emerald-500/25 flex items-center space-x-2">
+                    <i class="fa-brands fa-google-play"></i>
+                    <span>Google Play</span>
+                </a>
             </div>
         </div>
+    </header>
 
-        <!-- Ghi chú & Link mở Playlist trực tiếp trên YouTube -->
-        <p style="font-size: 14px; color: #555; margin-top: 15px;">
-            💡 <em>Mẹo: Bạn có thể chọn bài muốn xem ở danh sách trên, hoặc bấm <a href="https://youtube.com/playlist?list=PLdRi9y4GXAV8" target="_blank" style="color: #0a1a2b; font-weight: bold;">Mở trọn bộ Playlist trên YouTube ↗</a>.</em>
-        </p>
-    </div>
+    <!-- MAIN CONTENT SECTION -->
+    <section class="pt-32 pb-24 px-6 relative overflow-hidden">
+        <!-- Ambient glow background -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-emerald-500/10 rounded-full blur-[140px] pointer-events-none"></div>
 
-    <div class="section">
-        <h2>Liên hệ hỗ trợ</h2>
-        <p>Email hỗ trợ kỹ thuật: <strong>briancore.pos@gmail.com</strong></p>
-    </div>
+        <div class="max-w-5xl mx-auto relative z-10 space-y-12">
+            
+            <!-- Page Title Card -->
+            <div class="text-center space-y-4 pb-8 border-b border-slate-800">
+                <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-slate-800/80 border border-slate-700/60 text-xs font-medium text-emerald-400 shadow-sm">
+                    <i class="fa-solid fa-book-open"></i>
+                    <span>Documentation & Manuals</span>
+                </div>
+                <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
+                    User Guide <span class="text-slate-400 font-normal text-2xl sm:text-3xl block sm:inline">/ Hướng dẫn sử dụng</span>
+                </h1>
+                <p class="text-slate-400 text-base max-w-2xl mx-auto">
+                    Tài liệu hướng dẫn chi tiết toàn bộ tính năng, quy trình vận hành và cấu hình phần mềm BrianCore ePOS.<br>
+                    <span class="text-slate-500 text-sm">Comprehensive manual for system configuration, features, and daily operations.</span>
+                </p>
+            </div>
 
-</div>
+            <!-- 1. Giới thiệu -->
+            <div class="p-6 sm:p-8 rounded-3xl bg-slate-900/60 border border-slate-800 backdrop-blur-xl shadow-xl space-y-6">
+                <h2 class="text-2xl font-bold text-white flex items-center space-x-3">
+                    <span class="w-8 h-8 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-sm font-semibold border border-emerald-500/20">01</span>
+                    <span>Introduction / Giới thiệu hệ thống</span>
+                </h2>
+                <div class="space-y-4 text-slate-300">
+                    <p class="leading-relaxed">
+                        BrianCore ePOS được xây dựng theo mô hình <strong class="text-white">Offline‑First</strong>, toàn bộ dữ liệu bán hàng được lưu trữ và xử lý cục bộ trên thiết bị hoặc hệ thống nội bộ. Internet chỉ dùng cho kiểm tra bản quyền và tác vụ quản trị.
+                        <span class="block text-slate-400 text-sm mt-1">Built with an <strong class="text-slate-300">Offline-First</strong> architecture, all sales data is stored and processed locally on device. Internet is only required for license verification and administration.</span>
+                    </p>
+                    <p class="leading-relaxed">
+                        Nhờ đó, hoạt động bán hàng vẫn diễn ra bình thường ngay cả khi kết nối Internet không ổn định hoặc gián đoạn.
+                        <span class="block text-slate-400 text-sm mt-1">Ensuring uninterrupted checkout operations even during network outages.</span>
+                    </p>
+                </div>
 
-<footer>
-    © 2026 BrianCore ePOS — User Guide v1.0
-</footer>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-slate-800">
+                    <div>
+                        <h3 class="text-emerald-400 font-semibold mb-3 text-sm uppercase tracking-wider">Phù hợp cho các mô hình / Suitable for:</h3>
+                        <ul class="space-y-2 text-sm text-slate-300">
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-emerald-400 text-xs"></i><span>Cửa hàng bán lẻ, tiệm tạp hoá <span class="text-slate-500 text-xs block">Retail stores, grocery shops</span></span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-emerald-400 text-xs"></i><span>Nhà hàng, quán café, quán ăn <span class="text-slate-500 text-xs block">Restaurants, cafes, eateries</span></span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-emerald-400 text-xs"></i><span>Karaoke, tiệm Internet, tiệm game <span class="text-slate-500 text-xs block">Entertainment centers, gaming lounges</span></span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-emerald-400 text-xs"></i><span>Mô hình đặt bàn, giữ chỗ, gọi món theo đơn <span class="text-slate-500 text-xs block">Table service & order-based models</span></span></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-emerald-400 font-semibold mb-3 text-sm uppercase tracking-wider">Mục tiêu & Ưu điểm / Objectives & Benefits:</h3>
+                        <ul class="space-y-2 text-sm text-slate-300">
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-emerald-400 text-xs"></i><span>Bán hàng nhanh và trực quan <span class="text-slate-500 text-xs block">Fast and intuitive sales workflow</span></span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-emerald-400 text-xs"></i><span>Lưu trữ dữ liệu cục bộ an toàn <span class="text-slate-500 text-xs block">Secure local data storage</span></span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-emerald-400 text-xs"></i><span>Đồng bộ mạng nội bộ LAN <span class="text-slate-500 text-xs block">Local network LAN synchronization</span></span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-emerald-400 text-xs"></i><span>Dễ mở rộng tính năng theo module <span class="text-slate-500 text-xs block">Modular and easily expandable</span></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
-<script>
-function playLesson(id) {
-    var iframe = document.getElementById('main-player');
-    if (id.startsWith('PL')) {
-        iframe.src = "https://www.youtube.com/embed/videoseries?list=" + id + "&autoplay=1";
-    } else {
-        // Thêm &list=PLdRi9y4GXAV8 để khi hết video bài lẻ, YouTube vẫn tự phát tiếp các bài trong Playlist
-        iframe.src = "https://www.youtube.com/embed/" + id + "?list=PLdRi9y4GXAV8&autoplay=1";
+            <!-- 2. Các phiên bản sản phẩm -->
+            <div class="p-6 sm:p-8 rounded-3xl bg-slate-900/60 border border-slate-800 backdrop-blur-xl shadow-xl space-y-6">
+                <h2 class="text-2xl font-bold text-white flex items-center space-x-3">
+                    <span class="w-8 h-8 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-sm font-semibold border border-emerald-500/20">02</span>
+                    <span>Product Editions / Các phiên bản sản phẩm</span>
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="p-5 rounded-2xl bg-slate-800/40 border border-slate-700/60 space-y-3">
+                        <div class="flex justify-between items-center">
+                            <h3 class="font-bold text-white text-lg">BrianCore ePOS Free</h3>
+                            <span class="px-2.5 py-1 rounded-lg bg-slate-700 text-slate-300 text-xs font-semibold">Free Edition</span>
+                        </div>
+                        <p class="text-xs text-slate-400">Phù hợp cho quán ăn nhỏ, café nhỏ, hộ kinh doanh gia đình.<br><em>Suitable for small eateries, cafes, and family businesses.</em></p>
+                        <ul class="space-y-2 text-sm text-slate-300 border-t border-slate-700/50 pt-3">
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-emerald-400"></i><span>Quản lý khu vực & sản phẩm (cơ bản)</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-emerald-400"></i><span>Quản lý đơn hàng & thanh toán</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-emerald-400"></i><span>Báo cáo doanh thu cơ bản</span></li>
+                        </ul>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-slate-800/60 border border-emerald-500/40 space-y-3 relative shadow-lg shadow-emerald-950/20">
+                        <div class="flex justify-between items-center">
+                            <h3 class="font-bold text-emerald-400 text-lg">BrianCore ePOS Pro</h3>
+                            <span class="px-2.5 py-1 rounded-lg bg-emerald-500/20 text-emerald-300 text-xs font-semibold border border-emerald-500/30">PRO Edition</span>
+                        </div>
+                        <p class="text-xs text-slate-400">Đầy đủ tính năng nâng cao cho nhà hàng và cửa hàng lớn.<br><em>Advanced features for growing businesses and restaurants.</em></p>
+                        <ul class="space-y-2 text-sm text-slate-300 border-t border-slate-700/50 pt-3">
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-emerald-400"></i><span>Bao gồm tất cả tính năng bản Free</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-emerald-400"></i><span>Quản lý đặt chỗ (Reserved) & Voucher QR</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-emerald-400"></i><span>Đồng bộ nhiều thiết bị & Backup/Restore</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Yêu cầu môi trường & Cài đặt -->
+            <div class="p-6 sm:p-8 rounded-3xl bg-slate-900/60 border border-slate-800 backdrop-blur-xl shadow-xl space-y-6">
+                <h2 class="text-2xl font-bold text-white flex items-center space-x-3">
+                    <span class="w-8 h-8 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-sm font-semibold border border-emerald-500/20">03</span>
+                    <span>System Requirements & Setup / Yêu cầu môi trường & Cài đặt</span>
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-slate-300">
+                    <div class="space-y-3 p-4 rounded-2xl bg-slate-800/40 border border-slate-700/50">
+                        <h3 class="font-bold text-white text-base flex items-center space-x-2"><i class="fa-solid fa-mobile-screen text-emerald-400"></i><span>Thiết bị / Devices</span></h3>
+                        <ul class="space-y-1.5 text-slate-300">
+                            <li>• Thiết bị Android hoặc iOS <span class="text-slate-500 text-xs block">Android or iOS devices</span></li>
+                            <li>• Máy in nhiệt IP nếu cần in hóa đơn <span class="text-slate-500 text-xs block">IP thermal printer for receipts</span></li>
+                            <li>• Mạng LAN nội bộ (nếu dùng nhiều thiết bị) <span class="text-slate-500 text-xs block">Local LAN network for multi-device sync</span></li>
+                        </ul>
+                    </div>
+                    <div class="space-y-3 p-4 rounded-2xl bg-slate-800/40 border border-slate-700/50">
+                        <h3 class="font-bold text-white text-base flex items-center space-x-2"><i class="fa-solid fa-gears text-emerald-400"></i><span>Cài đặt / Configuration</span></h3>
+                        <ul class="space-y-1.5 text-slate-300">
+                            <li>• Tải và cài đặt ứng dụng BrianCore ePOS <span class="text-slate-500 text-xs block">Download & install application</span></li>
+                            <li>• Thiết lập mạng nội bộ nếu đồng bộ dữ liệu <span class="text-slate-500 text-xs block">Setup local network if needed</span></li>
+                            <li>• Cấu hình máy in hóa đơn phù hợp <span class="text-slate-500 text-xs block">Configure thermal receipt printer</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Giao diện tổng quan -->
+            <div class="p-6 sm:p-8 rounded-3xl bg-slate-900/60 border border-slate-800 backdrop-blur-xl shadow-xl space-y-4">
+                <h2 class="text-2xl font-bold text-white flex items-center space-x-3">
+                    <span class="w-8 h-8 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-sm font-semibold border border-emerald-500/20">04</span>
+                    <span>Overview Interface / Giao diện tổng quan</span>
+                </h2>
+                <p class="text-slate-300 text-sm">Các màn hình chính trong hệ thống phần mềm:</p>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 text-sm">
+                    <div class="p-3 rounded-xl bg-slate-800/40 border border-slate-700/50 text-slate-200">🏠 Trang chủ <span class="text-slate-500 text-xs block">Home Screen</span></div>
+                    <div class="p-3 rounded-xl bg-slate-800/40 border border-slate-700/50 text-slate-200">🗂️ Khu vực bán hàng <span class="text-slate-500 text-xs block">Resource Group</span></div>
+                    <div class="p-3 rounded-xl bg-slate-800/40 border border-slate-700/50 text-slate-200">📍 Vị trí phục vụ <span class="text-slate-500 text-xs block">Resource / Table</span></div>
+                    <div class="p-3 rounded-xl bg-slate-800/40 border border-slate-700/50 text-slate-200">🛒 Đặt hàng <span class="text-slate-500 text-xs block">Order Screen</span></div>
+                    <div class="p-3 rounded-xl bg-slate-800/40 border border-slate-700/50 text-slate-200">💳 Thanh toán <span class="text-slate-500 text-xs block">Payment Screen</span></div>
+                    <div class="p-3 rounded-xl bg-slate-800/40 border border-slate-700/50 text-slate-200">📅 Đặt chỗ (PRO) <span class="text-slate-500 text-xs block">Reserved</span></div>
+                    <div class="p-3 rounded-xl bg-slate-800/40 border border-slate-700/50 text-slate-200">🎟️ Voucher (PRO) <span class="text-slate-500 text-xs block">Vouchers</span></div>
+                    <div class="p-3 rounded-xl bg-slate-800/40 border border-slate-700/50 text-slate-200">⚙️ Cấu hình hệ thống <span class="text-slate-500 text-xs block">Settings</span></div>
+                </div>
+            </div>
+
+            <!-- 5. Cấu hình ban đầu & Dữ liệu gốc -->
+            <div class="p-6 sm:p-8 rounded-3xl bg-slate-900/60 border border-slate-800 backdrop-blur-xl shadow-xl space-y-6">
+                <h2 class="text-2xl font-bold text-white flex items-center space-x-3">
+                    <span class="w-8 h-8 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-sm font-semibold border border-emerald-500/20">05</span>
+                    <span>Configuration & Master Data / Cấu hình & Dữ liệu gốc</span>
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-slate-300">
+                    <div class="space-y-4">
+                        <div class="p-4 rounded-2xl bg-slate-800/40 border border-slate-700/50 space-y-2">
+                            <h3 class="font-bold text-white">Network & Printer Setup (PRO)</h3>
+                            <p class="text-xs text-slate-400">Thiết lập Server IP, cổng Port, kiểm tra kết nối mạng và cấu hình máy in nhiệt mở khay tiền tự động.</p>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-slate-800/40 border border-slate-700/50 space-y-2">
+                            <h3 class="font-bold text-white">Resource & Product Management</h3>
+                            <p class="text-xs text-slate-400">Quản lý khu vực bàn/phòng, danh mục sản phẩm, nhóm sản phẩm một cách trực quan.</p>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="p-4 rounded-2xl bg-slate-800/40 border border-slate-700/50 space-y-2">
+                            <h3 class="font-bold text-white">Options & Variants (Tùy chọn)</h3>
+                            <p class="text-xs text-slate-400">Tạo các tùy chọn như size, topping, đá, đường, gia vị và ánh xạ (Product Option Mapping) chính xác vào sản phẩm.</p>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-slate-800/40 border border-slate-700/50 space-y-2">
+                            <h3 class="font-bold text-white">Backup & Restore</h3>
+                            <p class="text-xs text-slate-400">Sao lưu và khôi phục cơ sở dữ liệu an toàn. Khuyến nghị thực hiện sao lưu định kỳ hằng ngày.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Quy trình vận hành & Thanh toán -->
+            <div class="p-6 sm:p-8 rounded-3xl bg-slate-900/60 border border-slate-800 backdrop-blur-xl shadow-xl space-y-6">
+                <h2 class="text-2xl font-bold text-white flex items-center space-x-3">
+                    <span class="w-8 h-8 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-sm font-semibold border border-emerald-500/20">06</span>
+                    <span>Sales & Checkout Workflow / Quy trình bán hàng & Thanh toán</span>
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                    <div class="p-4 rounded-2xl bg-slate-800/40 border border-slate-700/50 space-y-2">
+                        <div class="text-emerald-400 font-bold">Bước 1: Mở Resource</div>
+                        <p class="text-slate-300 text-xs">Chọn bàn hoặc vị trí phục vụ khách hàng để bắt đầu tạo đơn hàng mới.</p>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-slate-800/40 border border-slate-700/50 space-y-2">
+                        <div class="text-emerald-400 font-bold">Bước 2: Tạo đơn hàng</div>
+                        <p class="text-slate-300 text-xs">Chọn danh mục, sản phẩm, tùy chọn kèm theo (size/topping), nhập số lượng và ghi chú.</p>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-slate-800/40 border border-slate-700/50 space-y-2">
+                        <div class="text-emerald-400 font-bold">Bước 3: Thanh toán & Split Bill</div>
+                        <p class="text-slate-300 text-xs">Tính tổng tiền, áp dụng mã voucher QR, chia hóa đơn (Split Bill) và in hóa đơn hoàn tất.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. Khắc phục sự cố & Mẹo vận hành -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="p-6 rounded-3xl bg-slate-900/60 border border-slate-800 backdrop-blur-xl shadow-xl space-y-4">
+                    <h2 class="text-lg font-bold text-white flex items-center space-x-2">
+                        <i class="fa-solid fa-triangle-exclamation text-amber-400"></i>
+                        <span>Troubleshooting / Khắc phục sự cố</span>
+                    </h2>
+                    <ul class="space-y-3 text-sm text-slate-300">
+                        <li>
+                            <strong class="text-white block">Không in được hóa đơn:</strong>
+                            <span class="text-slate-400 text-xs">Kiểm tra kết nối máy in, cấu hình printer IP và lệnh mở khay tiền.</span>
+                        </li>
+                        <li>
+                            <strong class="text-white block">Đơn hàng không cập nhật:</strong>
+                            <span class="text-slate-400 text-xs">Kiểm tra trạng thái resource, mạng LAN nội bộ hoặc khởi động lại ứng dụng.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="p-6 rounded-3xl bg-slate-900/60 border border-slate-800 backdrop-blur-xl shadow-xl space-y-4">
+                    <h2 class="text-lg font-bold text-white flex items-center space-x-2">
+                        <i class="fa-solid fa-lightbulb text-emerald-400"></i>
+                        <span>Operation Tips / Mẹo vận hành</span>
+                    </h2>
+                    <ul class="space-y-3 text-sm text-slate-300">
+                        <li>
+                            <strong class="text-white block">Định nghĩa dữ liệu trước:</strong>
+                            <span class="text-slate-400 text-xs">Cấu hình đầy đủ danh mục Resource và Product trước giờ mở cửa.</span>
+                        </li>
+                        <li>
+                            <strong class="text-white block">Sao lưu hằng ngày:</strong>
+                            <span class="text-slate-400 text-xs">Thực hiện backup dữ liệu cuối mỗi ngày làm việc để đảm bảo an toàn tuyệt đối.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 8. Video hướng dẫn (Interactive Playlist) -->
+            <div class="p-6 sm:p-8 rounded-3xl bg-slate-900/60 border border-slate-800 backdrop-blur-xl shadow-xl space-y-6">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div>
+                        <h2 class="text-2xl font-bold text-white flex items-center space-x-3">
+                            <span class="w-8 h-8 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-sm font-semibold border border-emerald-500/20">07</span>
+                            <span>Video Tutorials / Video hướng dẫn</span>
+                        </h2>
+                        <p class="text-slate-400 text-sm mt-1">Xem trọn bộ video hướng dẫn chi tiết về cách thiết lập và vận hành phần mềm BrianCore ePOS.</p>
+                    </div>
+                    <a href="https://youtube.com/playlist?list=PLdRi9y4GXAV8" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-emerald-400 text-xs font-semibold border border-slate-700 transition-all">
+                        <i class="fa-brands fa-youtube"></i>
+                        <span>Mở Playlist trên YouTube ↗</span>
+                    </a>
+                </div>
+
+                <!-- Khung nhúng Video Player -->
+                <div class="relative w-full pb-[56.25%] rounded-2xl overflow-hidden border border-slate-800 shadow-2xl bg-slate-950">
+                    <iframe 
+                        id="main-player"
+                        src="https://www.youtube.com/embed/videoseries?list=PLdRi9y4GXAV8" 
+                        title="BrianCore ePOS Tutorial Playlist" 
+                        class="absolute top-0 left-0 w-full h-full border-0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <!-- Danh sách bài học tương tác -->
+                <div class="p-5 rounded-2xl bg-slate-800/40 border border-slate-700/60 space-y-4">
+                    <h3 class="font-semibold text-white text-sm uppercase tracking-wider text-emerald-400">Danh sách bài học / Lesson Playlist (Click to play):</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5">
+                        <button class="w-full text-left bg-slate-800 hover:bg-emerald-500 hover:text-slate-950 text-slate-200 p-3 rounded-xl text-xs font-medium border border-slate-700 transition-all flex items-center space-x-2" onclick="playLesson('PLdRi9y4GXAV8')">
+                            <i class="fa-solid fa-play text-emerald-400"></i>
+                            <span>▶ Phát toàn bộ Playlist / Full Playlist</span>
+                        </button>
+                        <button class="w-full text-left bg-slate-800 hover:bg-emerald-500 hover:text-slate-950 text-slate-200 p-3 rounded-xl text-xs font-medium border border-slate-700 transition-all flex items-center space-x-2" onclick="playLesson('kAny5acxzts')">
+                            <i class="fa-solid fa-play text-emerald-400"></i>
+                            <span>Bài 1: Quản lý khu vực bán hàng</span>
+                        </button>
+                        <button class="w-full text-left bg-slate-800 hover:bg-emerald-500 hover:text-slate-950 text-slate-200 p-3 rounded-xl text-xs font-medium border border-slate-700 transition-all flex items-center space-x-2" onclick="playLesson('YB0j8frmijY')">
+                            <i class="fa-solid fa-play text-emerald-400"></i>
+                            <span>Bài 2: Quản lý vị trí phục vụ</span>
+                        </button>
+                        <button class="w-full text-left bg-slate-800 hover:bg-emerald-500 hover:text-slate-950 text-slate-200 p-3 rounded-xl text-xs font-medium border border-slate-700 transition-all flex items-center space-x-2" onclick="playLesson('WyNGO2YXIAA')">
+                            <i class="fa-solid fa-play text-emerald-400"></i>
+                            <span>Bài 3: Quản lý nhóm sản phẩm</span>
+                        </button>
+                        <button class="w-full text-left bg-slate-800 hover:bg-emerald-500 hover:text-slate-950 text-slate-200 p-3 rounded-xl text-xs font-medium border border-slate-700 transition-all flex items-center space-x-2" onclick="playLesson('qydNWooHV48')">
+                            <i class="fa-solid fa-play text-emerald-400"></i>
+                            <span>Bài 4: Quản lý danh mục sản phẩm</span>
+                        </button>
+                        <button class="w-full text-left bg-slate-800 hover:bg-emerald-500 hover:text-slate-950 text-slate-200 p-3 rounded-xl text-xs font-medium border border-slate-700 transition-all flex items-center space-x-2" onclick="playLesson('o7hyvYh0xA8')">
+                            <i class="fa-solid fa-play text-emerald-400"></i>
+                            <span>Bài 5: Quản lý nhóm tùy chọn</span>
+                        </button>
+                        <button class="w-full text-left bg-slate-800 hover:bg-emerald-500 hover:text-slate-950 text-slate-200 p-3 rounded-xl text-xs font-medium border border-slate-700 transition-all flex items-center space-x-2" onclick="playLesson('swOlXwSeqcQ')">
+                            <i class="fa-solid fa-play text-emerald-400"></i>
+                            <span>Bài 6: Quản lý danh mục tùy chọn</span>
+                        </button>
+                        <button class="w-full text-left bg-slate-800 hover:bg-emerald-500 hover:text-slate-950 text-slate-200 p-3 rounded-xl text-xs font-medium border border-slate-700 transition-all flex items-center space-x-2" onclick="playLesson('vjmsWMbg0SM')">
+                            <i class="fa-solid fa-play text-emerald-400"></i>
+                            <span>Bài 7: Ánh xạ sản phẩm và tùy chọn</span>
+                        </button>
+                        <button class="w-full text-left bg-slate-800 hover:bg-emerald-500 hover:text-slate-950 text-slate-200 p-3 rounded-xl text-xs font-medium border border-slate-700 transition-all flex items-center space-x-2" onclick="playLesson('zeE7TcioO3E')">
+                            <i class="fa-solid fa-play text-emerald-400"></i>
+                            <span>Bài 8: Quản lý đơn hàng</span>
+                        </button>
+                        <button class="w-full text-left bg-slate-800 hover:bg-emerald-500 hover:text-slate-950 text-slate-200 p-3 rounded-xl text-xs font-medium border border-slate-700 transition-all flex items-center space-x-2" onclick="playLesson('0Bh1goX7fyQ')">
+                            <i class="fa-solid fa-play text-emerald-400"></i>
+                            <span>Bài 9: Tính tiền & Thanh toán</span>
+                        </button>
+                        <button class="w-full text-left bg-slate-800 hover:bg-emerald-500 hover:text-slate-950 text-slate-200 p-3 rounded-xl text-xs font-medium border border-slate-700 transition-all flex items-center space-x-2" onclick="playLesson('6YWDGJdgd3s')">
+                            <i class="fa-solid fa-play text-emerald-400"></i>
+                            <span>Bài 10: Tính tiền có chia Bill</span>
+                        </button>
+                        <button class="w-full text-left bg-slate-800 hover:bg-emerald-500 hover:text-slate-950 text-slate-200 p-3 rounded-xl text-xs font-medium border border-slate-700 transition-all flex items-center space-x-2" onclick="playLesson('ZqAsGsmeQ3s')">
+                            <i class="fa-solid fa-play text-emerald-400"></i>
+                            <span>Bài 11: Tính tiền có Voucher</span>
+                        </button>
+                        <button class="w-full text-left bg-slate-800 hover:bg-emerald-500 hover:text-slate-950 text-slate-200 p-3 rounded-xl text-xs font-medium border border-slate-700 transition-all flex items-center space-x-2" onclick="playLesson('hbiRmy5dj98')">
+                            <i class="fa-solid fa-play text-emerald-400"></i>
+                            <span>Bài 12: Quản lý Voucher</span>
+                        </button>
+                        <button class="w-full text-left bg-slate-800 hover:bg-emerald-500 hover:text-slate-950 text-slate-200 p-3 rounded-xl text-xs font-medium border border-slate-700 transition-all flex items-center space-x-2" onclick="playLesson('j1n7eTX67lQ')">
+                            <i class="fa-solid fa-play text-emerald-400"></i>
+                            <span>Bài 13: Quản lý đặt chỗ (Reserved)</span>
+                        </button>
+                        <button class="w-full text-left bg-slate-800 hover:bg-emerald-500 hover:text-slate-950 text-slate-200 p-3 rounded-xl text-xs font-medium border border-slate-700 transition-all flex items-center space-x-2" onclick="playLesson('a9U91MPY57k')">
+                            <i class="fa-solid fa-play text-emerald-400"></i>
+                            <span>Bài 14: Cấu hình máy in</span>
+                        </button>
+                        <button class="w-full text-left bg-slate-800 hover:bg-emerald-500 hover:text-slate-950 text-slate-200 p-3 rounded-xl text-xs font-medium border border-slate-700 transition-all flex items-center space-x-2" onclick="playLesson('KakMC4hRgHI')">
+                            <i class="fa-solid fa-play text-emerald-400"></i>
+                            <span>Bài 15: Cấu hình chung</span>
+                        </button>
+                        <button class="w-full text-left bg-slate-800 hover:bg-emerald-500 hover:text-slate-950 text-slate-200 p-3 rounded-xl text-xs font-medium border border-slate-700 transition-all flex items-center space-x-2" onclick="playLesson('uzHzmPpwHzk')">
+                            <i class="fa-solid fa-play text-emerald-400"></i>
+                            <span>Bài 16: Cấu hình mạng & Đồng bộ dữ liệu</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Support Card -->
+            <div class="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-slate-900 to-slate-900/80 border border-emerald-500/30 backdrop-blur-xl shadow-xl text-center space-y-4">
+                <h2 class="text-xl font-bold text-white">Need Support? / Cần hỗ trợ thêm?</h2>
+                <p class="text-slate-300 text-sm max-w-lg mx-auto">
+                    Nếu bạn cần hỗ trợ kỹ thuật hoặc có thắc mắc trong quá trình sử dụng, hãy liên hệ ngay với chúng tôi:
+                    <span class="block text-slate-400 text-xs mt-1">For technical assistance, please reach out via email:</span>
+                </p>
+                <div>
+                    <a href="mailto:briancore.pos@gmail.com" class="inline-flex items-center space-x-2 px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-base transition-all shadow-lg shadow-emerald-500/20">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>briancore.pos@gmail.com</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-ambient-dark border-t border-slate-800 text-center py-8 px-6 text-slate-400 text-sm">
+        <div class="max-w-7xl mx-auto space-y-2">
+            <p class="font-medium text-slate-300">BrianCore ePOS — Bright At The Core. Smart. Reliable. Offline‑First.</p>
+            <p>© 2026 BrianCore ePOS. All rights reserved. User Guide v1.0</p>
+        </div>
+    </footer>
+
+    <!-- YouTube Playlist Script -->
+    <script>
+    function playLesson(id) {
+        var iframe = document.getElementById('main-player');
+        if (id.startsWith('PL')) {
+            iframe.src = "https://www.youtube.com/embed/videoseries?list=" + id + "&autoplay=1";
+        } else {
+            iframe.src = "https://www.youtube.com/embed/" + id + "?list=PLdRi9y4GXAV8&autoplay=1";
+        }
+        iframe.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
-    iframe.scrollIntoView({ behavior: 'smooth', block: 'center' });
-}
-</script>
+    </script>
 
 </body>
 </html>

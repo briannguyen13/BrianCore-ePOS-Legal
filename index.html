@@ -1,212 +1,319 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BrianCore ePOS Privacy Policy</title>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 20px;
-            line-height: 1.7;
-            color: #333;
+    <title>BrianCore ePOS — Smart. Reliable. Offline‑First.</title>
+    <meta name="description" content="Giải pháp quản lý bán hàng ổn định, linh hoạt và được thiết kế cho môi trường vận hành thực tế.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ambient: {
+                            dark: '#0B0F19',
+                            card: '#131C2E',
+                            accent: '#10B981',
+                            emerald: '#34D399'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    }
+                }
+            }
         }
-
-        h1 {
-            color: #0B6EFD;
-        }
-
-        h2 {
-            margin-top: 40px;
-            color: #111;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 8px;
-        }
-
-        ul {
-            padding-left: 24px;
-        }
-
-        .divider {
-            margin: 50px 0;
-            border-top: 2px solid #ddd;
-        }
-    </style>
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
 
-<h1>BrianCore ePOS Privacy Policy / Chính sách bảo mật BrianCore ePOS</h1>
+<body class="bg-ambient-dark text-slate-100 font-sans antialiased selection:bg-emerald-500 selection:text-white">
 
-<h2>English</h2>
+    <!-- HEADER / THANH ĐIỀU HƯỚNG -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-ambient-dark/85 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <a href="index.html" class="flex items-center space-x-3 group">
+                    <img src="images/logo/brian_core_symbol_V.2.f.png" alt="BrianCore ePOS Logo" class="h-10 object-contain shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform">
+                </a>
+            </div>
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
+                <a href="UserGuide.html" class="hover:text-emerald-400 transition-colors">User Guide <span class="text-xs text-slate-500">/ Hướng dẫn</span></a>
+                <a href="privacy-policy.html" class="hover:text-emerald-400 transition-colors">Privacy <span class="text-xs text-slate-500">/ Quyền riêng tư</span></a>
+                <a href="ScreenShorts.html" class="hover:text-emerald-400 transition-colors">Gallery <span class="text-xs text-slate-500">/ Hình ảnh</span></a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <a href="https://play.google.com/store/apps/details?id=com.briancore.briancorepos&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold text-sm transition-all shadow-lg shadow-emerald-500/25 flex items-center space-x-2">
+                    <i class="fa-brands fa-google-play"></i>
+                    <span>Google Play</span>
+                </a>
+            </div>
+        </div>
+    </header>
 
-<p><strong>Last updated:</strong> July 2026</p>
+    <!-- BANNER SECTION -->
+    <section class="pt-28 pb-4 px-6 bg-ambient-dark">
+        <div class="max-w-5xl mx-auto text-center">
+            <div class="w-full rounded-3xl overflow-hidden shadow-2xl border border-slate-800/80 bg-slate-900/40 backdrop-blur-xl p-4 sm:p-6">
+                <img src="images/logo/horizontal_logo_2.png" alt="BrianCore ePOS Banner" class="w-full h-auto max-h-[180px] sm:max-h-[220px] object-contain mx-auto">
+            </div>
+        </div>
+    </section>
 
-<p>
-BrianCore ePOS is a point-of-sale (POS) application designed for retail stores,
-restaurants, cafes and other businesses.
-</p>
+    <!-- HERO SECTION -->
+    <section class="relative pt-6 pb-16 md:pt-10 md:pb-24 overflow-hidden">
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="max-w-5xl mx-auto px-6 relative z-10 text-center">
+            <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-slate-800/80 border border-slate-700/60 text-xs font-medium text-emerald-400 shadow-sm mb-6">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>Smart. Reliable. Offline‑First POS System</span>
+            </div>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight mb-6">
+                BrianCore <span class="bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">ePOS</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto font-normal leading-relaxed mb-8">
+                Giải pháp quản lý bán hàng thông minh, ổn định và linh hoạt cho mọi môi trường vận hành thực tế.<br>
+                <span class="text-slate-400 text-base italic">Smart, stable, and flexible sales management solution designed for real-world operations.</span>
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="https://play.google.com/store/apps/details?id=com.briancore.briancorepos&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" class="px-8 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold transition-all shadow-xl shadow-emerald-500/25 flex items-center space-x-3 text-base">
+                    <i class="fa-brands fa-google-play text-xl"></i>
+                    <span>Tải về trên Google Play / Get it on Google Play</span>
+                </a>
+            </div>
+        </div>
+    </section>
 
-<h3>Information We Collect</h3>
+    <!-- ABOUT / TRIẾT LÝ -->
+    <section class="py-16 px-6 border-t border-slate-800/60 bg-slate-900/20">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white">
+                        Triết lý & Mục tiêu <br><span class="text-slate-400 text-xl font-normal">Philosophy & Objectives</span>
+                    </h2>
+                    <p class="text-slate-300 text-lg leading-relaxed">
+                        Trong hoạt động kinh doanh nhà hàng, quán café hay cửa hàng bán lẻ, điều quan trọng nhất không phải là phần mềm có bao nhiêu tính năng phức tạp, mà là khi khách hàng gọi món và thanh toán, hệ thống phải luôn <strong class="text-white">hoạt động ổn định, nhanh chóng và đáng tin cậy</strong>.
+                        <br><span class="text-slate-400 text-base block mt-2">In the restaurant, café, or retail business, the most important thing is not how many complex features a software has, but ensuring the system remains stable, fast, and reliable during checkout.</span>
+                    </p>
+                    <p class="text-slate-300 text-lg leading-relaxed">
+                        Sản phẩm được thiết kế để giúp các doanh nghiệp nhỏ chuyển đổi từ quy trình quản lý thủ công sang kỹ thuật số một cách đơn giản, hiệu quả và tối ưu chi phí.
+                        <br><span class="text-slate-400 text-base block mt-2">Built to help small businesses transition from manual workflows to digital management simply, efficiently, and cost-effectively.</span>
+                    </p>
+                    <div class="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 font-medium">
+                        ✨ Bright At The Core — Xây dựng sự vững chắc từ cốt lõi hệ thống.
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <div class="rounded-2xl overflow-hidden border border-slate-700/80 shadow-2xl shadow-emerald-950/30 bg-slate-800 p-2">
+                        <img src="images/screenshots/02.Home.png" alt="BrianCore ePOS Home Interface" class="rounded-xl w-full h-auto object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<p>
-BrianCore ePOS may store business-related information entered by the user,
-including:
-</p>
+    <!-- OFFLINE FIRST -->
+    <section class="py-16 px-6 border-t border-slate-800/60">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="flex justify-center order-2 lg:order-1">
+                    <div class="rounded-2xl overflow-hidden border border-slate-700/80 shadow-2xl shadow-emerald-950/30 bg-slate-800 p-2">
+                        <img src="images/screenshots/offline_first.png" alt="Offline First Architecture" class="rounded-xl w-full h-auto object-cover">
+                    </div>
+                </div>
+                <div class="space-y-6 order-1 lg:order-2">
+                    <div class="inline-block px-3 py-1 rounded-lg bg-teal-500/10 text-teal-400 text-xs font-semibold uppercase tracking-wider">Core Architecture / Kiến trúc lõi</div>
+                    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white">
+                        Offline‑First <br><span class="text-slate-400 text-xl font-normal">Ưu tiên vận hành ngoại tuyến</span>
+                    </h2>
+                    <p class="text-slate-300 text-lg leading-relaxed">
+                        Khác với các hệ thống POS phụ thuộc hoàn toàn vào Internet và Cloud, BrianCore ePOS được thiết kế theo triết lý <strong class="text-white">Offline‑First</strong> nguyên bản.
+                        <br><span class="text-slate-400 text-base block mt-2">Unlike cloud-dependent POS systems, BrianCore ePOS is engineered from the ground up with a true Offline-First architecture.</span>
+                    </p>
+                    <p class="text-slate-300 text-lg leading-relaxed">
+                        Toàn bộ quá trình bán hàng, xử lý đơn hàng và lưu trữ dữ liệu được vận hành cục bộ trên thiết bị. Internet chỉ dùng khi kiểm tra bản quyền hoặc đồng bộ quản trị khi cần thiết.
+                        <br><span class="text-slate-400 text-base block mt-2">All sales, order processing, and data storage run locally on device. Internet is only required for licensing validation or administrative sync.</span>
+                    </p>
+                    <p class="text-slate-300 text-lg leading-relaxed">
+                        Giúp giảm thiểu tối đa rủi ro mất kết nối mạng, bảo mật dữ liệu tuyệt đối và tiết kiệm chi phí hạ tầng.
+                        <br><span class="text-slate-400 text-base block mt-2">Minimizing network outage risks, ensuring absolute data security, and saving infrastructure costs.</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<ul>
-    <li>Customer names</li>
-    <li>Customer phone numbers</li>
-    <li>Product information</li>
-    <li>Sales transactions</li>
-    <li>Inventory records</li>
-</ul>
+    <!-- FEATURES -->
+    <section class="py-20 px-6 border-t border-slate-800/60 bg-slate-900/20">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-center text-white mb-2">Tính năng chính</h2>
+            <p class="text-slate-400 text-center max-w-xl mx-auto mb-12 uppercase tracking-wide text-sm font-semibold">Key Features & Capabilities</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="flex items-start space-x-4 p-5 rounded-2xl bg-slate-800/60 border border-slate-700/60 hover:border-emerald-500/50 transition-all">
+                    <div class="text-emerald-400 text-xl mt-1"><i class="fa-solid fa-box"></i></div>
+                    <div>
+                        <h3 class="font-semibold text-white mb-1">Quản lý sản phẩm & danh mục</h3>
+                        <p class="text-xs text-emerald-400 font-medium mb-1">Products & Categories Management</p>
+                        <p class="text-sm text-slate-400">Tổ chức danh mục menu và hàng hóa khoa học, trực quan.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4 p-5 rounded-2xl bg-slate-800/60 border border-slate-700/60 hover:border-emerald-500/50 transition-all">
+                    <div class="text-emerald-400 text-xl mt-1"><i class="fa-solid fa-sliders"></i></div>
+                    <div>
+                        <h3 class="font-semibold text-white mb-1">Tùy chọn linh hoạt</h3>
+                        <p class="text-xs text-emerald-400 font-medium mb-1">Variants & Add-ons</p>
+                        <p class="text-sm text-slate-400">Quản lý size, topping, add-on theo yêu cầu khách hàng.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4 p-5 rounded-2xl bg-slate-800/60 border border-slate-700/60 hover:border-emerald-500/50 transition-all">
+                    <div class="text-emerald-400 text-xl mt-1"><i class="fa-solid fa-receipt"></i></div>
+                    <div>
+                        <h3 class="font-semibold text-white mb-1">Quản lý đơn hàng</h3>
+                        <p class="text-xs text-emerald-400 font-medium mb-1">Order Processing</p>
+                        <p class="text-sm text-slate-400">Xử lý thanh toán nhanh chóng và chính xác tại quầy.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4 p-5 rounded-2xl bg-slate-800/60 border border-slate-700/60 hover:border-emerald-500/50 transition-all">
+                    <div class="text-emerald-400 text-xl mt-1"><i class="fa-solid fa-ticket"></i></div>
+                    <div>
+                        <h3 class="font-semibold text-white mb-1">Voucher & Khuyến mãi</h3>
+                        <p class="text-xs text-emerald-400 font-medium mb-1">Discounts & Promotions</p>
+                        <p class="text-sm text-slate-400">Áp dụng mã giảm giá và chương trình ưu đãi dễ dàng.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4 p-5 rounded-2xl bg-slate-800/60 border border-slate-700/60 hover:border-emerald-500/50 transition-all">
+                    <div class="text-emerald-400 text-xl mt-1"><i class="fa-solid fa-network-wired"></i></div>
+                    <div>
+                        <h3 class="font-semibold text-white mb-1">Đồng bộ mạng nội bộ</h3>
+                        <p class="text-xs text-emerald-400 font-medium mb-1">Local Network LAN Sync</p>
+                        <p class="text-sm text-slate-400">Chia sẻ dữ liệu giữa các thiết bị trong cùng mạng LAN.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4 p-5 rounded-2xl bg-slate-800/60 border border-slate-700/60 hover:border-emerald-500/50 transition-all">
+                    <div class="text-emerald-400 text-xl mt-1"><i class="fa-solid fa-database"></i></div>
+                    <div>
+                        <h3 class="font-semibold text-white mb-1">Sao lưu & Khôi phục</h3>
+                        <p class="text-xs text-emerald-400 font-medium mb-1">Backup & Restore</p>
+                        <p class="text-sm text-slate-400">Bảo vệ cơ sở dữ liệu an toàn tuyệt đối với tính năng backup.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4 p-5 rounded-2xl bg-slate-800/60 border border-slate-700/60 hover:border-emerald-500/50 transition-all">
+                    <div class="text-emerald-400 text-xl mt-1"><i class="fa-solid fa-chart-line"></i></div>
+                    <div>
+                        <h3 class="font-semibold text-white mb-1">Báo cáo doanh thu</h3>
+                        <p class="text-xs text-emerald-400 font-medium mb-1">Revenue Analytics</p>
+                        <p class="text-sm text-slate-400">Thống kê chi tiết giúp nắm bắt nhanh tình hình kinh doanh.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4 p-5 rounded-2xl bg-slate-800/60 border border-slate-700/60 hover:border-emerald-500/50 transition-all">
+                    <div class="text-emerald-400 text-xl mt-1"><i class="fa-solid fa-gears"></i></div>
+                    <div>
+                        <h3 class="font-semibold text-white mb-1">Cấu hình & Master Data</h3>
+                        <p class="text-xs text-emerald-400 font-medium mb-1">System Configuration</p>
+                        <p class="text-sm text-slate-400">Tùy biến hệ thống linh hoạt theo nhu cầu vận hành thực tế.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<p>
-The application does not collect:
-</p>
+    <!-- BUSINESS TYPES -->
+    <section class="py-20 px-6 border-t border-slate-800/60">
+        <div class="max-w-5xl mx-auto text-center space-y-12">
+            <div>
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-2">Phù hợp cho nhiều mô hình kinh doanh</h2>
+                <p class="text-slate-400 uppercase tracking-wide text-sm font-semibold">Designed for Various Business Models</p>
+            </div>
 
-<ul>
-    <li>Customer email addresses</li>
-    <li>Google account information</li>
-    <li>Facebook account information</li>
-    <li>Social media information</li>
-</ul>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="p-6 rounded-2xl bg-slate-800/40 border border-slate-700/50 flex flex-col items-center justify-center space-y-2">
+                    <span class="text-3xl">☕</span>
+                    <span class="font-medium text-slate-200">Quán café</span>
+                    <span class="text-xs text-slate-400">Coffee Shop</span>
+                </div>
+                <div class="p-6 rounded-2xl bg-slate-800/40 border border-slate-700/50 flex flex-col items-center justify-center space-y-2">
+                    <span class="text-3xl">🍜</span>
+                    <span class="font-medium text-slate-200">Nhà hàng / Khách sạn</span>
+                    <span class="text-xs text-slate-400">Restaurant / Hotel</span>
+                </div>
+                <div class="p-6 rounded-2xl bg-slate-800/40 border border-slate-700/50 flex flex-col items-center justify-center space-y-2">
+                    <span class="text-3xl">🛒</span>
+                    <span class="font-medium text-slate-200">Cửa hàng bán lẻ</span>
+                    <span class="text-xs text-slate-400">Retail Store</span>
+                </div>
+                <div class="p-6 rounded-2xl bg-slate-800/40 border border-slate-700/50 flex flex-col items-center justify-center space-y-2">
+                    <span class="text-3xl">🏪</span>
+                    <span class="font-medium text-slate-200">Cửa hàng tiện lợi</span>
+                    <span class="text-xs text-slate-400">Convenience Store</span>
+                </div>
+                <div class="p-6 rounded-2xl bg-slate-800/40 border border-slate-700/50 flex flex-col items-center justify-center space-y-2">
+                    <span class="text-3xl">🎤</span>
+                    <span class="font-medium text-slate-200">Karaoke</span>
+                    <span class="text-xs text-slate-400">Entertainment</span>
+                </div>
+                <div class="p-6 rounded-2xl bg-slate-800/40 border border-slate-700/50 flex flex-col items-center justify-center space-y-2">
+                    <span class="text-3xl">🍱</span>
+                    <span class="font-medium text-slate-200">Combo & Tùy chọn nhiều lớp</span>
+                    <span class="text-xs text-slate-400">Custom Combo Models</span>
+                </div>
+            </div>
 
-<h3>Data Storage</h3>
+            <div class="space-y-4 max-w-3xl mx-auto pt-6 text-slate-300 text-lg leading-relaxed">
+                <p>
+                    Phiên bản cung cấp đầy đủ các chức năng thiết yếu cho quán ăn nhỏ, quán café nhỏ hoặc các hộ kinh doanh gia đình.
+                    <br><span class="text-slate-400 text-base">Providing essential features tailored for small eateries, coffee shops, and family businesses.</span>
+                </p>
+                <p class="text-emerald-400 font-medium">
+                    Mục tiêu của BrianCore ePOS là giải pháp công nghệ dễ tiếp cận và thực tiễn cho cộng đồng doanh nghiệp nhỏ.
+                    <br><span class="text-slate-400 text-base font-normal">Our goal is to make practical and accessible POS technology for small business communities.</span>
+                </p>
+                <div class="pt-4">
+                    <a href="https://play.google.com/store/apps/details?id=com.briancore.briancorepos&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold transition-all shadow-lg shadow-emerald-500/20">
+                        <i class="fa-brands fa-google-play"></i>
+                        <span>Cài đặt từ Google Play / Install from Google Play</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<p>
-Business data is stored locally on the user's device.
-BrianCore ePOS does not transmit business data to any cloud service operated by BrianCore.
-</p>
+    <!-- DEPLOYMENT & TECHNOLOGY -->
+    <section class="py-20 px-6 border-t border-slate-800/60 bg-slate-900/20">
+        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
+            <div class="p-8 rounded-3xl bg-slate-800/50 border border-slate-700/60">
+                <div class="text-emerald-400 text-3xl mb-4"><i class="fa-solid fa-location-dot"></i></div>
+                <h3 class="text-xl font-bold text-white mb-2">Triển khai thực tế</h3>
+                <p class="text-xs text-emerald-400 font-medium mb-3">Live Deployment</p>
+                <p class="text-slate-300">
+                    Hiện đang được vận hành thực tế tại <strong class="text-white">VietThai Cuisine</strong> – Hastings, New Zealand.
+                </p>
+            </div>
+            <div class="p-8 rounded-3xl bg-slate-800/50 border border-slate-700/60">
+                <div class="text-teal-400 text-3xl mb-4"><i class="fa-solid fa-code"></i></div>
+                <h3 class="text-xl font-bold text-white mb-2">Công nghệ cốt lõi</h3>
+                <p class="text-xs text-teal-400 font-medium mb-3">Core Technology</p>
+                <p class="text-slate-300 leading-relaxed">
+                    Được phát triển bằng framework <strong class="text-white">Flutter</strong> với tâm huyết tạo ra những phần mềm thực sự hữu ích.
+                    <br><span class="text-slate-400 text-sm">Crafted with Flutter with passion for building genuinely useful software.</span>
+                </p>
+            </div>
+        </div>
+    </section>
 
-<h3>Local Network Communication</h3>
-
-<p>
-BrianCore ePOS may synchronize data between devices on the same local area network (LAN)
-when enabled by the user.
-</p>
-
-<h3>License Verification and Internet Connectivity</h3>
-
-<p>
-BrianCore ePOS requires an internet connection from time to time to verify purchase and subscription status with Google Play. 
-This verification is performed through Google Play services and is used solely to determine the user's entitlement to PRO features.
-</p>
-
-<p>
-If the application is unable to confirm the purchase status with Google Play for an extended period, 
-PRO features may become unavailable and the application may temporarily revert to FREE mode until the purchase status can be confirmed.
-</p>
-    
-<h3>Advertising</h3>
-
-<p>
-BrianCore ePOS does not display third-party advertisements.
-</p>
-
-<h3>Security</h3>
-
-<p>
-Reasonable measures are taken to protect locally stored business information.
-</p>
-
-<h3>Contact</h3>
-
-<p>
-For questions regarding this Privacy Policy, please contact:
-</p>
-
-<p>
-<strong>briancore.pos@gmail.com</strong>
-</p>
-
-<div class="divider"></div>
-
-<h2>Tiếng Việt</h2>
-
-<p><strong>Cập nhật lần cuối:</strong> Tháng 7 năm 2026</p>
-
-<p>
-BrianCore ePOS là ứng dụng điểm bán hàng (POS) được thiết kế cho các cửa hàng bán lẻ,
-nhà hàng, quán cà phê và các doanh nghiệp khác.
-</p>
-
-<h3>Thông tin chúng tôi thu thập</h3>
-
-<p>
-BrianCore ePOS có thể lưu trữ thông tin liên quan đến kinh doanh do người dùng nhập,
-bao gồm:
-</p>
-
-<ul>
-    <li>Tên khách hàng</li>
-    <li>Số điện thoại khách hàng</li>
-    <li>Thông tin sản phẩm</li>
-    <li>Giao dịch bán hàng</li>
-    <li>Hồ sơ hàng tồn kho</li>
-</ul>
-
-<p>
-Ứng dụng không thu thập:
-</p>
-
-<ul>
-    <li>Địa chỉ email của khách hàng</li>
-    <li>Thông tin tài khoản Google</li>
-    <li>Thông tin tài khoản Facebook</li>
-    <li>Thông tin mạng xã hội</li>
-</ul>
-
-<h3>Lưu trữ dữ liệu</h3>
-
-<p>
-Dữ liệu kinh doanh được lưu trữ cục bộ trên thiết bị của người dùng.
-BrianCore ePOS không truyền dữ liệu kinh doanh lên bất kỳ dịch vụ đám mây nào do BrianCore vận hành.
-</p>
-
-<h3>Giao tiếp mạng cục bộ</h3>
-
-<p>
-BrianCore ePOS có thể đồng bộ hóa dữ liệu giữa các thiết bị trên cùng một mạng cục bộ (LAN)
-khi được người dùng cho phép.
-</p>
-
-<h3>Xác minh giấy phép và kết nối Internet</h3>
-
-<p>
-Ứng dụng BrianCore ePOS yêu cầu kết nối internet định kỳ để xác minh trạng thái mua hàng và đăng ký với Google Play. 
-Quá trình xác minh này được thực hiện thông qua dịch vụ Google Play và chỉ được sử dụng để xác định quyền sử dụng các tính năng PRO của người dùng.
-</p>
-
-<p>
-Nếu ứng dụng không thể xác nhận trạng thái mua hàng với Google Play trong một thời gian dài, 
-các tính năng PRO có thể không khả dụng và ứng dụng có thể tạm thời chuyển sang chế độ MIỄN PHÍ cho đến khi trạng thái mua hàng được xác nhận.
-</p>
-    
-<h3>Quảng cáo</h3>
-
-<p>
-BrianCore ePOS không hiển thị quảng cáo của bên thứ ba.
-</p>
-
-<h3>Bảo mật</h3>
-
-<p>
-Các biện pháp hợp lý được thực hiện để bảo vệ thông tin kinh doanh được lưu trữ cục bộ.
-</p>
-
-<h3>Liên hệ</h3>
-
-<p>
-Mọi thắc mắc về Chính sách Bảo mật này, vui lòng liên hệ:
-</p>
-
-<p>
-<strong>briancore.pos@gmail.com</strong>
-</p>
+    <!-- FOOTER -->
+    <footer class="bg-ambient-dark border-t border-slate-800 text-center py-8 px-6 text-slate-400 text-sm">
+        <div class="max-w-7xl mx-auto space-y-2">
+            <p class="font-medium text-slate-300">BrianCore ePOS — Bright At The Core. Smart. Reliable. Offline‑First.</p>
+            <p>© 2026 BrianCore ePOS. All rights reserved.</p>
+        </div>
+    </footer>
 
 </body>
 </html>

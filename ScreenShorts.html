@@ -1,94 +1,183 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hình ảnh ứng dụng – BrianCore ePOS</title>
-
-<style>
-body{
-    margin:0;
-    font-family:Inter, Arial, sans-serif;
-    background:#f6f8fb;
-    color:#0a1a2b;
-}
-
-header{
-    background:#0a1a2b;
-    color:white;
-    padding:24px 40px;
-    font-size:28px;
-    font-weight:600;
-}
-
-.container{
-    max-width:1200px;
-    margin:auto;
-    padding:40px 20px;
-}
-
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));
-    gap:24px;
-}
-
-.gallery-item{
-    background:white;
-    padding:16px;
-    border-radius:12px;
-    box-shadow:0 4px 16px rgba(0,0,0,0.08);
-    text-align:center;
-}
-
-.gallery-item img{
-    width:100%;
-    border-radius:8px;
-    margin-bottom:10px;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screenshots Gallery / Hình ảnh ứng dụng — BrianCore ePOS</title>
+    <meta name="description" content="Thư viện hình ảnh giao diện ứng dụng quản lý bán hàng BrianCore ePOS. App screenshots and UI gallery.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ambient: {
+                            dark: '#0B0F19',
+                            card: '#131C2E',
+                            accent: '#10B981',
+                            emerald: '#34D399'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
-<body>
+<body class="bg-ambient-dark text-slate-100 font-sans antialiased selection:bg-emerald-500 selection:text-white">
 
-<header>Hình ảnh ứng dụng BrianCore ePOS</header>
+    <!-- HEADER / THANH ĐIỀU HƯỚNG -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-ambient-dark/85 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <a href="index.html" class="flex items-center space-x-3 group">
+                    <img src="images/logo/brian_core_symbol_V.2.f.png" alt="BrianCore ePOS Logo" class="h-10 object-contain shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform">
+                </a>
+            </div>
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
+                <a href="index.html" class="hover:text-emerald-400 transition-colors">Home <span class="text-xs text-slate-500">/ Trang chủ</span></a>
+                <a href="UserGuide.html" class="hover:text-emerald-400 transition-colors">User Guide <span class="text-xs text-slate-500">/ Hướng dẫn</span></a>
+                <a href="privacy-policy.html" class="hover:text-emerald-400 transition-colors">Privacy <span class="text-xs text-slate-500">/ Quyền riêng tư</span></a>
+                <a href="ScreenShorts.html" class="text-emerald-400 font-semibold">Gallery <span class="text-xs text-slate-500">/ Hình ảnh</span></a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <a href="https://play.google.com/store/apps/details?id=com.briancore.briancorepos&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold text-sm transition-all shadow-lg shadow-emerald-500/25 flex items-center space-x-2">
+                    <i class="fa-brands fa-google-play"></i>
+                    <span>Google Play</span>
+                </a>
+            </div>
+        </div>
+    </header>
 
-<div class="container">
-    <h2>Danh sách hình ảnh</h2>
+    <!-- MAIN CONTENT SECTION -->
+    <section class="pt-32 pb-24 px-6 relative overflow-hidden">
+        <!-- Ambient glow background -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-emerald-500/10 rounded-full blur-[140px] pointer-events-none"></div>
 
-    <div class="gallery" id="gallery"></div>
-</div>
+        <div class="max-w-7xl mx-auto relative z-10 space-y-12">
+            
+            <!-- Page Title Card -->
+            <div class="text-center space-y-4 pb-8 border-b border-slate-800">
+                <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-slate-800/80 border border-slate-700/60 text-xs font-medium text-emerald-400 shadow-sm">
+                    <i class="fa-solid fa-images"></i>
+                    <span>UI Showcase & Screenshots</span>
+                </div>
+                <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
+                    App Gallery <span class="text-slate-400 font-normal text-2xl sm:text-3xl block sm:inline">/ Hình ảnh ứng dụng</span>
+                </h1>
+                <p class="text-slate-400 text-base max-w-2xl mx-auto">
+                    Khám phá giao diện trực quan, hiện đại và tối ưu trải nghiệm người dùng của hệ thống BrianCore ePOS.<br>
+                    <span class="text-slate-500 text-sm">Explore the intuitive and modern user interface of BrianCore ePOS. Click any image to zoom in.</span>
+                </p>
+            </div>
 
-<script>
-// Danh sách file trong thư mục
-const files = [
-    "01.Loading.png",
-    "02.Home.png",
-    "03.Menu.png",
-    "04.Order.png",
-    "05.OrderOption.png",
-    "06.ViewAllOrder.png",
-    "07.Payment.png",
-    "08.SetupProduct.png",
-    "09.About.png",
-    "10.Reserved.png",
-    "13.NetworkConfig.png"
-];
+            <!-- Gallery Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="gallery"></div>
 
-const gallery = document.getElementById("gallery");
+        </div>
+    </section>
 
-files.forEach(file => {
-    const item = document.createElement("div");
-    item.className = "gallery-item";
+    <!-- LIGHTBOX MODAL (Xem ảnh lớn khi click) -->
+    <div id="lightbox" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden items-center justify-center p-4 cursor-pointer" onclick="closeLightbox()">
+        <div class="relative max-w-4xl max-h-[90vh] flex flex-col items-center" onclick="event.stopPropagation()">
+            <button onclick="closeLightbox()" class="absolute -top-12 right-0 text-white hover:text-emerald-400 text-2xl p-2 transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <img id="lightbox-img" src="" alt="Zoomed Screenshot" class="max-w-full max-h-[80vh] rounded-2xl shadow-2xl border border-slate-700 object-contain bg-slate-950">
+            <p id="lightbox-caption" class="text-slate-300 text-sm font-medium mt-4 text-center"></p>
+        </div>
+    </div>
 
-    item.innerHTML = `
-        <img src="images/screenshots/${file}" alt="${file}">
-        <span>${file.replace(".png","")}</span>
-    `;
+    <!-- FOOTER -->
+    <footer class="bg-ambient-dark border-t border-slate-800 text-center py-8 px-6 text-slate-400 text-sm">
+        <div class="max-w-7xl mx-auto space-y-2">
+            <p class="font-medium text-slate-300">BrianCore ePOS — Bright At The Core. Smart. Reliable. Offline‑First.</p>
+            <p>© 2026 BrianCore ePOS. All rights reserved. Gallery v1.0</p>
+        </div>
+    </footer>
 
-    gallery.appendChild(item);
-});
-</script>
+    <!-- Script tạo danh sách ảnh & Lightbox -->
+    <script>
+        const files = [
+            { file: "01.Loading.png", name: "01. Loading Screen", desc: "Màn hình khởi động hệ thống" },
+            { file: "02.Home.png", name: "02. Home Dashboard", desc: "Màn hình tổng quan trang chủ" },
+            { file: "03.Menu.png", name: "03. Menu & Categories", desc: "Quản lý danh mục sản phẩm" },
+            { file: "04.Order.png", name: "04. Order Creation", desc: "Tạo đơn hàng nhanh chóng" },
+            { file: "05.OrderOption.png", name: "05. Order Options", desc: "Tùy chọn size, topping, đá đường" },
+            { file: "06.ViewAllOrder.png", name: "06. All Orders", desc: "Quản lý danh sách đơn hàng" },
+            { file: "07.Payment.png", name: "07. Checkout & Payment", desc: "Màn hình thanh toán & in hóa đơn" },
+            { file: "08.SetupProduct.png", name: "08. Product Setup", desc: "Cấu hình sản phẩm & giá bán" },
+            { file: "09.About.png", name: "09. About & Info", desc: "Thông tin phiên bản & bản quyền" },
+            { file: "10.Reserved.png", name: "10. Reserved (PRO)", desc: "Quản lý đặt bàn / đặt chỗ" },
+            { file: "13.NetworkConfig.png", name: "13. Network & Sync (PRO)", desc: "Cấu hình mạng LAN & đồng bộ" }
+        ];
+
+        const gallery = document.getElementById("gallery");
+
+        files.forEach(itemData => {
+            const card = document.createElement("div");
+            card.className = "group bg-slate-900/60 border border-slate-800 rounded-2xl p-4 backdrop-blur-xl shadow-xl hover:border-emerald-500/50 transition-all duration-300 flex flex-col justify-between cursor-pointer";
+            
+            const imagePath = `images/screenshots/${itemData.file}`;
+
+            card.innerHTML = `
+                <div class="relative overflow-hidden rounded-xl bg-slate-950 border border-slate-800/80 mb-3 aspect-[9/16] flex items-center justify-center">
+                    <img src="${imagePath}" alt="${itemData.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                    <div class="absolute inset-0 bg-emerald-500/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <span class="px-3.5 py-2 rounded-xl bg-slate-950/80 text-emerald-400 text-xs font-semibold border border-emerald-500/30 shadow-lg flex items-center space-x-1.5">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                            <span>Xem lớn / Zoom</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="space-y-1">
+                    <h3 class="font-bold text-white text-sm group-hover:text-emerald-400 transition-colors">${itemData.name}</h3>
+                    <p class="text-slate-400 text-xs">${itemData.desc}</p>
+                </div>
+            `;
+
+            card.addEventListener("click", () => {
+                openLightbox(imagePath, `${itemData.name} — ${itemData.desc}`);
+            });
+
+            gallery.appendChild(card);
+        });
+
+        function openLightbox(src, caption) {
+            const lightbox = document.getElementById("lightbox");
+            const img = document.getElementById("lightbox-img");
+            const cap = document.getElementById("lightbox-caption");
+            
+            img.src = src;
+            cap.textContent = caption;
+            lightbox.classList.remove("hidden");
+            lightbox.classList.add("flex");
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById("lightbox");
+            lightbox.classList.remove("flex");
+            lightbox.classList.add("hidden");
+            document.body.style.overflow = "auto";
+        }
+
+        // Đóng lightbox bằng phím ESC
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") {
+                closeLightbox();
+            }
+        });
+    </script>
 
 </body>
 </html>
